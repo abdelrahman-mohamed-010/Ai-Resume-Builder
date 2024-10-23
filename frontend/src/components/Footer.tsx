@@ -1,5 +1,5 @@
 import React from "react";
-import { FaLinkedin, FaGithub } from "react-icons/fa";
+import { FaGithub } from "react-icons/fa";
 
 const Footer: React.FC = () => {
   return (
@@ -9,26 +9,15 @@ const Footer: React.FC = () => {
           &copy; {new Date().getFullYear()} AI Resume Builder. All rights
           reserved.
         </p>
-        <div className="flex items-center space-x-4">
-          <a
-            href="https://www.linkedin.com/in/your-linkedin-username"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-accent dark:hover:text-accent transition-colors flex items-center"
-          >
-            <FaLinkedin className="h-5 w-5 mr-1" />
-            LinkedIn
-          </a>
-          <a
-            href="https://github.com/your-github-username"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-accent dark:hover:text-accent transition-colors flex items-center"
-          >
-            <FaGithub className="h-5 w-5 mr-1" />
-            GitHub
-          </a>
-        </div>
+        <a
+          href="https://github.com/your-github-username"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hover:text-accent dark:hover:text-accent transition-colors flex items-center"
+        >
+          <FaGithub className="h-5 w-5 mr-1" />
+          GitHub
+        </a>
       </div>
     </footer>
   );
