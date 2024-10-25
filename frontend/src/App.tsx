@@ -3,7 +3,6 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Layout from "./components/Layout";
 import Home from "./pages/Home";
 import Tips from "./pages/Tips";
-import SettingsPage from "./pages/SettingsPage";
 import SelectCareer from "./pages/SelectCareer";
 import ResumeArchive from "./pages/ResumeArchive";
 
@@ -19,10 +18,6 @@ const router = createBrowserRouter([
       {
         path: "build-new-resume",
         element: <div>build new resume</div>,
-      },
-      {
-        path: "templates",
-        element: <div>templates</div>,
       },
       {
         path: "resume-archive",
