@@ -18,13 +18,9 @@ const TitleSection: React.FC<TitleSectionProps> = ({ open }) => {
               transition={{ delay: 0.125 }}
             >
               <span className="block text-xl font-bold">ResumeGenie</span>
-              {/* <span className="block text-xs text-secondary-text">
-                Pro Plan
-              </span> */}
             </motion.div>
           )}
         </div>
-        {/* {open && <FiChevronDown className="mr-2" />} */}
       </div>
     </div>
   );
