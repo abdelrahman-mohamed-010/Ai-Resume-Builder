@@ -8,7 +8,7 @@ const TitleSection: React.FC<TitleSectionProps> = ({ open }) => {
   return (
     <div className="mb-3 border-b border-slate-300 pb-3">
       <div className="flex  items-center justify-between rounded-md transition-colors text-primary-text dark:text-white">
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-3">
           <Logo />
           {open && (
             <motion.div
