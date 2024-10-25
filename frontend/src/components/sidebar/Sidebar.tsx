@@ -3,13 +3,10 @@ import { motion } from "framer-motion";
 import { FiHome } from "react-icons/fi";
 import { IoMdPaper } from "react-icons/io";
 import { IoMdAdd } from "react-icons/io";
-import { PiReadCvLogo } from "react-icons/pi";
 import { MdOutlineArchive, MdOutlineTipsAndUpdates } from "react-icons/md";
-import { IoSettingsOutline } from "react-icons/io5";
 import Option from "./UI/Option";
 import TitleSection from "./UI/TitleSection";
 import ToggleClose from "./UI/ToggleClose";
-import { CiStar } from "react-icons/ci";
 
 const Sidebar = () => {
   const [open, setOpen] = useState(true);
@@ -34,12 +31,6 @@ const Sidebar = () => {
           open={open}
         />
         <Option
-          Icon={PiReadCvLogo}
-          title="Templates "
-          path="templates"
-          open={open}
-        />
-        <Option
           Icon={MdOutlineArchive}
           title="Resume Archive"
           path="resume-archive"
@@ -56,18 +47,6 @@ const Sidebar = () => {
           Icon={MdOutlineTipsAndUpdates}
           title="Tips and Resources"
           path="tips-and-resources"
-          open={open}
-        />
-        <Option
-          Icon={IoSettingsOutline}
-          title="Settings"
-          path="settings"
-          open={open}
-        />
-        <Option
-          Icon={CiStar}
-          title="Meet the Creator"
-          path="creator"
           open={open}
         />
       </div>

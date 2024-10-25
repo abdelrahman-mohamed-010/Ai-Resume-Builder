@@ -58,6 +58,7 @@ const Resume: React.FC<ResumeProps> = ({ resume }) => {
             Last Updated: {resume.date}
           </p>
         </div>
+       
       </div>
     </motion.div>
   );
