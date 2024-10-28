@@ -21,7 +21,7 @@ const SelectCareer: React.FC = () => {
 
   const navigate = useNavigate();
 
-  const onSubmit: SubmitHandler<FormFields> = async (data, event) => {
+  const onSubmit: SubmitHandler<FormFields> = async (_, event) => {
     event?.preventDefault();
     try {
       await new Promise((resolve) => setTimeout(resolve, 2000));
