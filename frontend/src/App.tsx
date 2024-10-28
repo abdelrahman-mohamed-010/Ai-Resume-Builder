@@ -1,10 +1,10 @@
 import React from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Layout from "./components/Layout";
-import Home from "./pages/Home";
-import Tips from "./pages/Tips";
-import SelectCareer from "./pages/SelectCareer";
-import ResumeArchive from "./pages/ResumeArchive";
+import SelectCareer from "./pages/CoverLetter/SelectCareer";
+import ResumeArchive from "./pages/ResumeArchive/ResumeArchive";
+import Home from "./pages/Home/Home";
+import Tips from "./pages/Tips/Tips"
 
 const router = createBrowserRouter([
   {

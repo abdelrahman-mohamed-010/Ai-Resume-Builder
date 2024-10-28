@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
-import ChecklistItems from "../components/Tips/CheckListItems";
-import Resources from "../components/Tips/Resources";
+import Resources from "./Resources";
+import ChecklistItems from "./CheckListItems";
 
 const tips = [
   {

@@ -4,9 +4,9 @@ import { FiHome } from "react-icons/fi";
 import { IoMdPaper } from "react-icons/io";
 import { IoMdAdd } from "react-icons/io";
 import { MdOutlineArchive, MdOutlineTipsAndUpdates } from "react-icons/md";
-import Option from "./UI/Option";
+import Option from "./Option";
 import TitleSection from "./UI/TitleSection";
-import ToggleClose from "./UI/ToggleClose";
+import ToggleClose from "./ToggleClose";
 
 const Sidebar = () => {
   const [open, setOpen] = useState(true);

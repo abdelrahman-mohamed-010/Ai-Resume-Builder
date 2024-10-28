@@ -3,7 +3,7 @@ import { FiChevronDown } from "react-icons/fi";
 import { IoReturnDownBackOutline } from "react-icons/io5";
 import { useNavigate } from "react-router-dom";
 import { SubmitHandler, useForm } from "react-hook-form";
-import SubmitButton from "../UI/SubmitButton";
+import SubmitButton from "../../components/SubmitButton";
 
 interface FormFields {
   careerField: string;

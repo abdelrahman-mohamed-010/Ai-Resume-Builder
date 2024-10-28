@@ -1,5 +1,5 @@
 import { AiOutlineLogin, AiOutlineLogout } from "react-icons/ai";
-import DarkMode from "../../UI/DarkMode";
+import DarkMode from "../../components/DarkMode";
 import { useState } from "react";
 
 const Header = () => {

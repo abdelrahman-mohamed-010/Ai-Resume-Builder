@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { CiMenuKebab } from "react-icons/ci";
-import { Resume as ResumeType } from "../../pages/ResumeArchive";
+import { Resume as ResumeType } from "./ResumeArchive";
 import { motion } from "framer-motion";
 
 interface ResumeProps {
@@ -58,7 +58,6 @@ const Resume: React.FC<ResumeProps> = ({ resume }) => {
             Last Updated: {resume.date}
           </p>
         </div>
-       
       </div>
     </motion.div>
   );

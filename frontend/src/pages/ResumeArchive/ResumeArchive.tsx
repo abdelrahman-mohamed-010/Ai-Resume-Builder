@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { IoMdAdd } from "react-icons/io";
-import Resume from "../components/ResumeArchive/Resume";
 import { useState } from "react";
+import Resume from "./Resume";
 
 export interface Resume {
   id: number;

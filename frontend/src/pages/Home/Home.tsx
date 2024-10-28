@@ -1,8 +1,8 @@
 import { motion } from "framer-motion";
-import Faq from "../components/Home/Faq";
-import Header from "../components/Home/Header";
-import Features from "../components/Home/Features";
-import HeroSection from "../components/Home/HeroSection";
+import Header from "./Header";
+import HeroSection from "./HeroSection";
+import Features from "./Features";
+import Faq from "./Faq";
 
 const Home: React.FC = () => {
   return (
