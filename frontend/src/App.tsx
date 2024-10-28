@@ -4,7 +4,8 @@ import Layout from "./components/Layout";
 import SelectCareer from "./pages/CoverLetter/SelectCareer";
 import ResumeArchive from "./pages/ResumeArchive/ResumeArchive";
 import Home from "./pages/Home/Home";
-import Tips from "./pages/Tips/Tips"
+import Tips from "./pages/Tips/Tips";
+import Finalize_cover from "./pages/CoverLetter/Finalize-cover";
 
 const router = createBrowserRouter([
   {
@@ -26,6 +27,11 @@ const router = createBrowserRouter([
       {
         path: "select-career",
         element: <SelectCareer />,
+      },
+
+      {
+        path: "finalize-cover",
+        element: <Finalize_cover />,
       },
       {
         path: "tips-and-resources",

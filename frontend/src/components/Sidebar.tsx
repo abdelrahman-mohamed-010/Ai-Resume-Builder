@@ -5,8 +5,8 @@ import { IoMdPaper } from "react-icons/io";
 import { IoMdAdd } from "react-icons/io";
 import { MdOutlineArchive, MdOutlineTipsAndUpdates } from "react-icons/md";
 import Option from "./Option";
-import TitleSection from "./UI/TitleSection";
 import ToggleClose from "./ToggleClose";
+import TitleSection from "./TitleSection";
 
 const Sidebar = () => {
   const [open, setOpen] = useState(true);

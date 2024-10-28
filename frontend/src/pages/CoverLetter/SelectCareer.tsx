@@ -25,7 +25,7 @@ const SelectCareer: React.FC = () => {
     event?.preventDefault();
     try {
       await new Promise((resolve) => setTimeout(resolve, 2000));
-      console.log(data);
+      navigate("/finalize-cover");
     } catch (error) {
       setError("root", {
         message: "Something went wrong. Please try again.",

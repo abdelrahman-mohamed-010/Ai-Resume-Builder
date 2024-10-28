@@ -16,7 +16,7 @@ const Option: React.FC<OptionProps> = ({ Icon, title, path, open, notifs }) => {
         to={path}
         className={({ isActive }) =>
           `relative flex h-10 w-full items-center rounded-md transition-colors ${
-            isActive
+            isActive === true
               ? "bg-indigo-100 text-primary-text dark:bg-indigo-600 dark:text-white"
               : "text-secondary-text hover:bg-slate-100 dark:text-slate-400 dark:hover:bg-gray-700"
           }`
