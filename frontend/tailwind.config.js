@@ -18,8 +18,11 @@ export default {
         success: "#16A34A", // Green (for success messages)
         error: "#B91C1C", // Red (for error messages)
       },
+      screens: {
+        "3xl": "1920px", // example for extra large screens
+        "4xl": "2560px", // example for even larger screens if needed
+      },
     },
   },
   plugins: [],
 };
-
