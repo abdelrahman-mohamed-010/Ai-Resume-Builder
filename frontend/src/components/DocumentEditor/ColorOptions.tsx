@@ -1,5 +1,7 @@
 import { CiNoWaitingSign } from "react-icons/ci";
 import { FaCheck } from "react-icons/fa";
+import { useAppDispatch, useAppSelector } from "../../hooks/reduxHooks";
+import { updateColor } from "../../redux/coverLetterSlice";
 
 const ColorOptions = () => {
   const colors = [
@@ -14,7 +16,13 @@ const ColorOptions = () => {
     "#800080", // Purple
   ];
 
-  const selectedColor = "";
+  const dispatch = useAppDispatch();
+
+  const colorStyle = useAppSelector((state) => state.coverLetter.color);
+
+  const handleUpdateColorStyle = (color: string) => {
+    dispatch(updateColor(color));
+  };
 
   return (
     <>
@@ -24,14 +32,12 @@ const ColorOptions = () => {
           <div
             key={index}
             className={`w-8 h-8 3xl:w-10 3xl:h-10 rounded-full flex items-center justify-center cursor-pointer ${
-              color === selectedColor
+              color === colorStyle
                 ? "border-2 border-gray-100 outline outline-2 outline-primary"
                 : ""
             }`}
             style={{ backgroundColor: color || "transparent" }}
-            onClick={() =>
-              console.log(`Selected color: ${color || "No Color"}`)
-            }
+            onClick={() => handleUpdateColorStyle(color)}
           >
             {color === "" ? (
               <CiNoWaitingSign
@@ -39,7 +45,7 @@ const ColorOptions = () => {
                 className="w-8 h-8 3xl:w-10 3xl:h-10"
               />
             ) : (
-              color === selectedColor && <FaCheck color="white" />
+              color === colorStyle && <FaCheck color="white" />
             )}
           </div>
         ))}

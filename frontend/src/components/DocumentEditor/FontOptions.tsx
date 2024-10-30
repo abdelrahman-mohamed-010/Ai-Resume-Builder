@@ -1,15 +1,44 @@
 import { FiChevronDown } from "react-icons/fi";
+import { useAppDispatch, useAppSelector } from "../../hooks/reduxHooks";
+import { updateFontSize, updateFontStyle } from "../../redux/coverLetterSlice";
 
 const FontOptions = () => {
+  const dispatch = useAppDispatch();
+
+  const fontStyle = useAppSelector((state) => state.coverLetter.fontStyle);
+  const fontSize = useAppSelector((state) => state.coverLetter.fontSize);
+
+  const handleFontStyleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    dispatch(updateFontStyle(e.target.value));
+  };
+
+  const handleFontSizeChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    dispatch(updateFontSize(e.target.value));
+  };
+
   return (
     <div className="flex justify-between gap-6 3xl:gap-8">
       {[
-        { label: "Font Style", options: ["Raleway", "Roboto", "Open Sans"] },
-        { label: "Font Size", options: ["Medium", "Large", "Small"] },
-      ].map(({ label, options }) => (
+        {
+          label: "Font Style",
+          options: ["Raleway", "Roboto", "Open Sans"],
+          value: fontStyle,
+          onChange: handleFontStyleChange,
+        },
+        {
+          label: "Font Size",
+          options: ["Medium", "Large", "Small"],
+          value: fontSize,
+          onChange: handleFontSizeChange,
+        },
+      ].map(({ label, options, value, onChange }) => (
         <div key={label} className="relative w-full">
           <div className="my-2 text-xs 3xl:text-sm">{label}</div>
-          <select className="w-full p-3 md:p-4 border border-gray-300 rounded appearance-none pr-10 focus:outline-none 3xl:p-5">
+          <select
+            className="w-full p-3 md:p-4 border border-gray-300 rounded appearance-none pr-10 focus:outline-none 3xl:p-5"
+            value={value}
+            onChange={onChange}
+          >
             {options.map((option) => (
               <option key={option} value={option}>
                 {option}

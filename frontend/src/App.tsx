@@ -1,6 +1,6 @@
 import React from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Layout from "./components/Layout";
+import Layout from "./components/UI/Layout";
 import SelectCareer from "./pages/CoverLetter/SelectCareer";
 import ResumeArchive from "./pages/ResumeArchive/ResumeArchive";
 import Home from "./pages/Home/Home";

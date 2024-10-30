@@ -3,6 +3,7 @@ interface TitleSectionProps {
 }
 import { motion } from "framer-motion";
 import Logo from "./Logo";
+;
 
 const TitleSection: React.FC<TitleSectionProps> = ({ open }) => {
   return (

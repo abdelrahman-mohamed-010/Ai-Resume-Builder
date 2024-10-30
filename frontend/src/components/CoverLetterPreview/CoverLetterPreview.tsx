@@ -1,60 +1,94 @@
+import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+
 const CoverLetterPreview = () => {
+  const currentDate = new Date().toLocaleDateString();
+
   return (
-    <div className=" flex flex-col gap-3 items-end ">
-      <div className=" max-w-2xl  p-8 border border-gray-300 rounded-lg shadow-lg bg-white">
+    <motion.div
+      className="flex flex-col gap-3 items-end"
+      initial={{ opacity: 0, scale: 0.9 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 0.2 }}
+    >
+      <div className="max-w-2xl p-8 border border-gray-300 rounded-lg shadow-lg bg-white">
         <div className="mb-6">
-          <h1 className="text-2xl font-bold pb-1" contentEditable>
-            [Your Name]
+          <h1
+            className="text-2xl font-bold pb-1 focus:outline-dashed focus:outline-2 focus:outline-primary px-2"
+            contentEditable
+          >
+            Abdelrahman Mohamed
           </h1>
-          <hr className="border-gray-300 my-2" />
-          <p className="text-gray-600" contentEditable>
-            [Your Address]
+          <hr className="border-gray-300 my-2 focus:outline-dashed focus:outline-2 focus:outline-primary px-2" />
+          <p
+            className="text-gray-600 focus:outline-dashed focus:outline-2 focus:outline-primary px-2"
+            contentEditable
+          >
+            Cairo, Egypt
           </p>
-          <p className="text-gray-600" contentEditable>
-            [City, State, Zip]
+          <p
+            className="text-gray-600 focus:outline-dashed focus:outline-2 focus:outline-primary px-2"
+            contentEditable
+          >
+            abdelrahman@example.com
           </p>
-          <p className="text-gray-600" contentEditable>
-            [Email Address]
-          </p>
-          <p className="text-gray-600" contentEditable>
-            [Phone Number]
+          <p
+            className="text-gray-600 focus:outline-dashed focus:outline-2 focus:outline-primary px-2"
+            contentEditable
+          >
+            +20 1069175527
           </p>
         </div>
 
         <div className="mb-6">
-          <p className="text-gray-600" contentEditable>
-            [Date]
-          </p>
+          <p className="text-gray-600 cursor-default  px-2">{currentDate}</p>
         </div>
 
         <div className="mb-6">
-          <p className="text-gray-800" contentEditable>
-            Dear [Hiring Manager's Name],
+          <p className="text-gray-800 px-2 cursor-default">
+            Dear
+            <span
+              className="focus:outline-dashed focus:outline-2 focus:outline-primary hover:cursor-text"
+              contentEditable
+              
+            >
+              [Hiring Manager's Name]
+            </span>
+            ,
           </p>
-          <p className="mt-4 text-gray-800" contentEditable>
-            I am writing to express my interest in the [Job Title] position at
-            [Company Name]. I believe my skills and experiences align perfectly
-            with the requirements of this role.
+          <p
+            className="mt-4 text-gray-800 focus:outline-dashed focus:outline-2 focus:outline-primary px-2"
+            contentEditable
+          >
+            I am writing to express my interest in the Frontend Engineer
+            position at [Company Name]. My skills in React, JavaScript, and
+            modern web development frameworks make me a strong candidate for
+            this role, I have a proven track record of building dynamic,
+            user-friendly applications that enhance user experience. My
+            experience in collaborating with cross-functional teams ensures that
+            I can effectively contribute to your projects.
           </p>
-          <p className="mt-4 text-gray-800" contentEditable>
-            [Add more paragraphs discussing your qualifications, experiences,
-            and enthusiasm for the position.]
+
+          <p className="mt-4 text-gray-800 px-2 cursor-default">
+            Thank you for considering my application. I look forward to
+            discussing my qualifications further.
           </p>
-          <p className="mt-4 text-gray-800" contentEditable>
-            Thank you for considering my application. I look forward to the
-            opportunity to discuss my qualifications further.
-          </p>
-          <p className="mt-4 text-gray-800">Sincerely,</p>
-          <p className="text-gray-800" contentEditable>
-            [Your Name]
+          <p className="mt-4 text-gray-800 px-2 cursor-default">Sincerely,</p>
+          <p
+            className="text-gray-800 focus:outline-dashed focus:outline-2 focus:outline-primary px-2"
+            contentEditable
+          >
+            Abdelrahman Mohamed
           </p>
         </div>
       </div>
-      <button className=" w-fit rounded bg-primary hover:bg-indigo-800 transition-all font-bold text-white py-2 px-6">
-        {/* Save */}
-        Add To Archive
-      </button>
-    </div>
+      <Link
+        to={"/select-career"}
+        className="w-fit rounded bg-primary hover:bg-indigo-800 transition-all font-bold text-white py-2 px-6"
+      >
+        Create Another
+      </Link>
+    </motion.div>
   );
 };
 
