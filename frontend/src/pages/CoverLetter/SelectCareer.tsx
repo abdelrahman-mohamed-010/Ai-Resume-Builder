@@ -48,13 +48,11 @@ const SelectCareer: React.FC = () => {
         className="bg-white dark:bg-dark-background dark:text-white p-6 md:p-10 rounded-lg border border-gray-300 dark:border-gray-600 w-full max-w-sm md:max-w-md lg:max-w-xl"
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.5 }}
+        transition={{ duration: 0.4 }}
       >
         <h1 className="text-2xl md:text-4xl font-bold mb-6 md:mb-8 text-primary dark:text-accent text-center">
           Select Career Path
         </h1>
-
-        {/* Inputs */}
         <div className="relative mb-4 md:mb-6">
           <label
             htmlFor="careerField"
@@ -197,4 +195,3 @@ const SelectCareer: React.FC = () => {
 };
 
 export default SelectCareer;
-

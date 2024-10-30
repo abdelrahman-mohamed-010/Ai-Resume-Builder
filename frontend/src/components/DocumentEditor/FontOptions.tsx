@@ -21,7 +21,7 @@ const FontOptions = () => {
       {[
         {
           label: "Font Style",
-          options: ["Raleway", "Roboto", "Open Sans"],
+          options: ["sans", "serif", "mono"],
           value: fontStyle,
           onChange: handleFontStyleChange,
         },
@@ -35,7 +35,7 @@ const FontOptions = () => {
         <div key={label} className="relative w-full">
           <div className="my-2 text-xs 3xl:text-sm">{label}</div>
           <select
-            className="w-full p-3 md:p-4 border border-gray-300 rounded appearance-none pr-10 focus:outline-none 3xl:p-5"
+            className="w-full p-3 md:p-4 border border-gray-300 rounded appearance-none pr-10 focus:outline-none 3xl:p-5 capitalize"
             value={value}
             onChange={onChange}
           >

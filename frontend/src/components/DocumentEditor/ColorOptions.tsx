@@ -6,14 +6,14 @@ import { updateColor } from "../../redux/coverLetterSlice";
 const ColorOptions = () => {
   const colors = [
     "", // No color (default)
-    "#ff0000", // Red
-    "#00ff00", // Green
-    "#0000ff", // Blue
-    "#ffff00", // Yellow
-    "#ff00ff", // Magenta
-    "#00ffff", // Cyan
-    "#ffa500", // Orange
-    "#800080", // Purple
+    "#4B0082", // Indigo
+    "#007BFF", // Light Blue
+    "#28A745", // Success Green
+    "#FFC107", // Amber
+    "#17A2B8", // Teal
+    "#6C757D", // Gray
+    "#FF6F61", // Coral
+    "#6F42C1", // Violet
   ];
 
   const dispatch = useAppDispatch();

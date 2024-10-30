@@ -24,7 +24,7 @@ const initialState: CoverLetterState = {
   content:
     "I am writing to express my interest in the Frontend Engineer position at [Company Name]. My skills in React, JavaScript, and modern web development frameworks make me a strong candidate for this role, I have a proven track record of building dynamic, user-friendly applications that enhance user experience. My experience in collaborating with cross-functional teams ensures that I can effectively contribute to your projects.",
   color: "",
-  fontStyle: "Raleway",
+  fontStyle: "sans",
   fontSize: "Medium",
   layout: "Standard",
 };
