@@ -15,7 +15,13 @@ const CoverLetterPreview = () => {
 
   return (
     <motion.div
-      className="flex flex-col gap-3 items-end py-12"
+      className={`flex flex-col gap-3 items-end py-12 ${
+        fontStyle === "serif"
+          ? "font-serif"
+          : fontStyle === "sans"
+          ? "font-sans"
+          : ""
+      }`}
       initial={{ opacity: 0, scale: 0.9 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.2 }}
@@ -27,7 +33,7 @@ const CoverLetterPreview = () => {
             : layoutStyle === "Condensed"
             ? "px-12"
             : ""
-        } font-${fontStyle} text-${
+        } text-${
           fontSize === "Large" ? "lg" : fontSize === "Small" ? "sm" : ""
         }`}
         style={{ color: colorStyle || "" }}
@@ -44,7 +50,7 @@ const CoverLetterPreview = () => {
             discussing my qualifications further.
           </p>
           <p className="mt-4 text-gray-800 px-2 cursor-default">Sincerely,</p>
-          <ClosingName/>
+          <ClosingName />
         </div>
       </div>
       <Link
