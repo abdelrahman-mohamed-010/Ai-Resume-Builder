@@ -53,7 +53,7 @@ const DownloadModal: React.FC<DownloadModalProps> = ({ onClose }) => {
       <h1 className="text-xl font-bold mb-4">
         How would you like to download your letter?
       </h1>
-      <ul className="items-center w-full text-sm font-sm text-gray-900 bg-white border border-gray-200 rounded sm:flex dark:bg-gray-700 dark:border-gray-600 dark:text-white">
+      <ul className="items-center w-full text-sm font-sm text-gray-900 bg-white border border-gray-200 rounded sm:flex">
         {options.map((option, index) => (
           <li
             key={option.id}
@@ -61,7 +61,7 @@ const DownloadModal: React.FC<DownloadModalProps> = ({ onClose }) => {
               index < options.length - 1
                 ? "border-b border-gray-200 sm:border-b-0 sm:border-r"
                 : ""
-            } dark:border-gray-600`}
+            } `}
             onClick={() => handleChange(option)}
           >
             <div className="flex items-center ps-3">
@@ -76,7 +76,7 @@ const DownloadModal: React.FC<DownloadModalProps> = ({ onClose }) => {
               />
               <label
                 htmlFor={option.id}
-                className="cursor-pointer flex items-center w-full py-3 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+                className="cursor-pointer flex items-center w-full py-3 ms-2 text-sm font-medium text-gray-900 "
               >
                 {option.icon}
                 {option.label}

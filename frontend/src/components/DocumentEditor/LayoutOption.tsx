@@ -12,16 +12,16 @@ const LayoutOption = () => {
 
   return (
     <>
-      <p className="text-sm 3xl:text-base">Layout</p>
+      <p className="text-sm 3xl:text-base dark:text-accent">Layout</p>
       <div className="flex gap-4 my-3 3xl:gap-6">
         {["Condensed", "Standard", "Expanded"].map((layout) => (
           <button
             key={layout}
             type="button"
-            className={`px-4 py-2 font-semibold border-2 rounded-full mb-2 transition-all hover:border-indigo-800 hover:text-indigo-800 3xl:px-6 3xl:py-3 ${
+            className={`px-4 py-2 font-semibold border-2 rounded-full mb-2 transition-all hover:border-indigo-700 hover:text-indigo-700 3xl:px-6 3xl:py-3 ${
               layout === layoutStyle
-                ? "text-indigo-800 border-indigo-800"
-                : "text-primary border-primary"
+                ? "text-indigo-700 border-indigo-700 dark:text-slate-400 dark:border-slate-400"
+                : "text-primary border-primary "
             }`}
             onClick={() => handleLayoutStyle(layout)}
           >

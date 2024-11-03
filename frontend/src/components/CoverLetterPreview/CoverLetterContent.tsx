@@ -55,13 +55,13 @@ const CoverLetterContent: React.FC = () => {
           type="text"
           value={hiringManager}
           onChange={handleHiringManagerChange}
-          className="focus:outline-dashed focus:outline-2 focus:outline-primary hover:cursor-text ml-1"
+          className="focus:outline-dashed focus:outline-2 focus:outline-primary hover:cursor-text ml-1 bg-inherit"
         />
         ,
       </p>
       <textarea
         ref={textareaRef}
-        className="mt-4 text-gray-800 focus:outline-dashed focus:outline-2 focus:outline-primary px-2 w-full resize-none overflow-hidden"
+        className="mt-4 bg-inherit text-gray-800 focus:outline-dashed focus:outline-2 focus:outline-primary px-2 w-full resize-none overflow-hidden"
         value={bodyContent}
         onChange={(e) => {
           handleBodyContentChange(e);

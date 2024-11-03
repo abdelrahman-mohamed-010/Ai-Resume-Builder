@@ -18,7 +18,7 @@ const LocationInput: React.FC = () => {
   return (
     <input
       type="text"
-      className="text-gray-600 focus:outline-dashed focus:outline-2 focus:outline-primary px-2 mb-1 w-full"
+      className="text-gray-600 focus:outline-dashed focus:outline-2 focus:outline-primary px-2 mb-1 w-full bg-inherit"
       value={adress}
       onChange={(e) => setAdress(e.target.value)}
     />

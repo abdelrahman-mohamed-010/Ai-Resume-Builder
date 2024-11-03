@@ -32,10 +32,12 @@ const FontOptions = () => {
           onChange: handleFontSizeChange,
         },
       ].map(({ label, options, value, onChange }) => (
-        <div key={label} className="relative w-full">
-          <div className="my-2 text-xs 3xl:text-sm">{label}</div>
+        <div key={label} className="relative w-full ">
+          <div className="my-2 text-xs 3xl:text-sm dark:text-accent">
+            {label}
+          </div>
           <select
-            className="w-full p-3 md:p-4 border border-gray-300 rounded appearance-none pr-10 focus:outline-none 3xl:p-5 capitalize"
+            className="w-full p-3 md:p-4 border border-gray-300 dark:border-none rounded appearance-none pr-10 focus:outline-none 3xl:p-5 capitalize dark:bg-secondary-text dark:text-slate-200"
             value={value}
             onChange={onChange}
           >
@@ -46,7 +48,7 @@ const FontOptions = () => {
             ))}
           </select>
           <span className="absolute inset-y-0 top-1/2 -translate-y-1/2 right-3 flex items-center pointer-events-none">
-            <FiChevronDown className="text-gray-500 mt-8" />
+            <FiChevronDown className="text-gray-500 mt-8 dark:text-slate-200" />
           </span>
         </div>
       ))}

@@ -26,14 +26,14 @@ const ColorOptions = () => {
 
   return (
     <>
-      <p className="text-sm mt-3 3xl:text-base">Colors</p>
+      <p className="text-sm mt-3 3xl:text-base dark:text-accent">Colors</p>
       <div className="flex justify-between w-full mt-4 3xl:mt-6">
         {colors.map((color, index) => (
           <div
             key={index}
             className={`w-8 h-8 3xl:w-10 3xl:h-10 rounded-full flex items-center justify-center cursor-pointer ${
               color === colorStyle
-                ? "border-2 border-gray-100 outline outline-2 outline-primary"
+                ? "border-2 border-gray-100 dark:border-transparent outline outline-2 outline-primary"
                 : ""
             }`}
             style={{ backgroundColor: color || "transparent" }}

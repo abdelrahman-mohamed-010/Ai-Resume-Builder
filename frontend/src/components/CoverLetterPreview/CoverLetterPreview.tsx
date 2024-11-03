@@ -27,7 +27,7 @@ const CoverLetterPreview = () => {
       transition={{ duration: 0.2 }}
     >
       <div
-        className={`max-w-2xl p-8 border border-gray-300 rounded-lg shadow-lg bg-white ${
+        className={`max-w-2xl p-8 border border-gray-300 rounded-lg shadow-lg bg-white dark:border-none dark:rounded-none dark:bg-gray-200 ${
           layoutStyle === "Expanded"
             ? " px-4"
             : layoutStyle === "Condensed"

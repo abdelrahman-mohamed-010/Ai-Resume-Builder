@@ -19,7 +19,7 @@ const PhoneInput: React.FC = () => {
   return (
     <input
       type="tel"
-      className="text-gray-600 focus:outline-dashed focus:outline-2 focus:outline-primary px-2 w-full"
+      className="text-gray-600 focus:outline-dashed focus:outline-2 focus:outline-primary px-2 w-full bg-inherit"
       value={phone}
       onChange={(e) => setPhone(e.target.value)}
     />

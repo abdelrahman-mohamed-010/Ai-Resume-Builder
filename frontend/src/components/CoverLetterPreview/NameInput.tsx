@@ -19,7 +19,7 @@ const NameInput: React.FC = () => {
     <div>
       <input
         type="text"
-        className="text-2xl font-bold pb-1 focus:outline-dashed focus:outline-2 focus:outline-primary px-2 w-full"
+        className="text-2xl font-bold pb-1 focus:outline-dashed focus:outline-2 focus:outline-primary px-2 w-full bg-inherit"
         value={name}
         onChange={(e) => setName(e.target.value)}
       />

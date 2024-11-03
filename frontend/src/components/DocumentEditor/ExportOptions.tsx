@@ -13,12 +13,12 @@ const ExportOptions: React.FC<{ type: string }> = ({ type }) => {
         </Modal>
       )}
 
-      <div className="font-semibold text-sm mb-5 3xl:text-base">
+      <div className="font-semibold text-sm mb-5 3xl:text-base dark:text-accent">
         Export Options
       </div>
       <button
         onClick={() => setShowModal(true)}
-        className="block w-full rounded-3xl bg-black font-bold text-white p-3 mb-3 hover:bg-primary transition-all 3xl:p-4"
+        className="block w-full rounded-3xl bg-black font-bold text-white p-3 mb-3 hover:bg-primary transition-all 3xl:p-4 dark:bg-primary dark:hover:bg-indigo-700"
       >
         Download
       </button>
