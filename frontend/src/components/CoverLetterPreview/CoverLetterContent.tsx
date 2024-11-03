@@ -1,13 +1,41 @@
 import React, { useState, useRef, useEffect } from "react";
+import { useAppDispatch, useAppSelector } from "../../hooks/reduxHooks";
+import { updateHr, updateContent } from "../../redux/coverLetterSlice";
+import { useDebounce } from "../../hooks/useDebounce"; 
 
 const CoverLetterContent: React.FC = () => {
-  const [hiringManager, setHiringManager] = useState("[Hiring Manager's Name]");
-  const [bodyContent, setBodyContent] = useState(
-    "I am writing to express my interest in the Frontend Engineer position at [Company Name]. My skills in React, JavaScript, and modern web development frameworks make me a strong candidate for this role. I have a proven track record of building dynamic, user-friendly applications that enhance user experience. My experience in collaborating with cross-functional teams ensures that I can effectively contribute to your projects."
-  );
+  const HrName = useAppSelector((state) => state.coverLetter.hr);
+  const Content = useAppSelector((state) => state.coverLetter.content);
+
+  const [hiringManager, setHiringManager] = useState(HrName);
+  const [bodyContent, setBodyContent] = useState(Content);
+
+  const debouncedHiringManager = useDebounce(hiringManager, 500);
+  const debouncedBodyContent = useDebounce(bodyContent, 500);
+
+  const dispatch = useAppDispatch();
+
+  const handleHiringManagerChange = (
+    e: React.ChangeEvent<HTMLInputElement>
+  ) => {
+    setHiringManager(e.target.value);
+  };
+
+  const handleBodyContentChange = (
+    e: React.ChangeEvent<HTMLTextAreaElement>
+  ) => {
+    setBodyContent(e.target.value);
+  };
+
+  useEffect(() => {
+    dispatch(updateHr(debouncedHiringManager));
+  }, [debouncedHiringManager, dispatch]);
+
+  useEffect(() => {
+    dispatch(updateContent(debouncedBodyContent));
+  }, [debouncedBodyContent, dispatch]);
 
   const textareaRef = useRef<HTMLTextAreaElement>(null);
-
   const adjustTextareaHeight = () => {
     if (textareaRef.current) {
       textareaRef.current.style.height = "auto";
@@ -26,7 +54,7 @@ const CoverLetterContent: React.FC = () => {
         <input
           type="text"
           value={hiringManager}
-          onChange={(e) => setHiringManager(e.target.value)}
+          onChange={handleHiringManagerChange}
           className="focus:outline-dashed focus:outline-2 focus:outline-primary hover:cursor-text ml-1"
         />
         ,
@@ -36,7 +64,7 @@ const CoverLetterContent: React.FC = () => {
         className="mt-4 text-gray-800 focus:outline-dashed focus:outline-2 focus:outline-primary px-2 w-full resize-none overflow-hidden"
         value={bodyContent}
         onChange={(e) => {
-          setBodyContent(e.target.value);
+          handleBodyContentChange(e);
           adjustTextareaHeight();
         }}
       />

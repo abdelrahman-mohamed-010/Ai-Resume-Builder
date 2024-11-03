@@ -18,8 +18,8 @@ const CoverLetterPreview = () => {
       className={`flex flex-col gap-3 items-end py-12 ${
         fontStyle === "serif"
           ? "font-serif"
-          : fontStyle === "sans"
-          ? "font-sans"
+          : fontStyle === "mono"
+          ? "font-mono"
           : ""
       }`}
       initial={{ opacity: 0, scale: 0.9 }}
