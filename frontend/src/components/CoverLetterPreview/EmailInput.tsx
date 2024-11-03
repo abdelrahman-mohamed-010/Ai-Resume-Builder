@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useAppDispatch, useAppSelector } from "../../hooks/reduxHooks";
 import { updateGmail } from "../../redux/coverLetterSlice";
-import { useDebounce } from "../../hooks/useDebounce";
+import { useDebounce } from "../../hooks/useDebounce.ts";
 
 const EmailInput: React.FC = () => {
   const userEmail = useAppSelector((state) => state.coverLetter.gmail);

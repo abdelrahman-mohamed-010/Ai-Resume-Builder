@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useAppDispatch, useAppSelector } from "../../hooks/reduxHooks";
 import { updatePhone } from "../../redux/coverLetterSlice";
-import { useDebounce } from "../../hooks/useDebounce";
+import { useDebounce } from "../../hooks/useDebounce.ts";
 
 const PhoneInput: React.FC = () => {
   const userPhone = useAppSelector((state) => state.coverLetter.phone);

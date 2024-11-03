@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useAppDispatch, useAppSelector } from "../../hooks/reduxHooks";
 import { updateAdress } from "../../redux/coverLetterSlice";
-import { useDebounce } from "../../hooks/useDebounce";
+import { useDebounce } from "../../hooks/useDebounce.ts";
 
 const LocationInput: React.FC = () => {
   const userAdress = useAppSelector((state) => state.coverLetter.adress);

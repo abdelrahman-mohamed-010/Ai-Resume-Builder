@@ -4,10 +4,11 @@ interface CoverLetterState {
   name: string;
   date: string;
   adress: string;
-  phone: string; 
+  phone: string;
   gmail: string;
   hr: string;
   content: string;
+  lastName: string;
   color: string;
   fontStyle: string;
   fontSize: string;
@@ -23,6 +24,7 @@ const initialState: CoverLetterState = {
   hr: "[Hiring Manager's Name]",
   content:
     "I am writing to express my interest in the Frontend Engineer position at [Company Name]. My skills in React, JavaScript, and modern web development frameworks make me a strong candidate for this role, I have a proven track record of building dynamic, user-friendly applications that enhance user experience. My experience in collaborating with cross-functional teams ensures that I can effectively contribute to your projects.",
+  lastName: "USerName",
   color: "",
   fontStyle: "sans",
   fontSize: "Medium",
@@ -54,6 +56,9 @@ const coverLetterSlice = createSlice({
     updateContent: (state, action: PayloadAction<string>) => {
       state.content = action.payload;
     },
+    updateLastName: (state, action: PayloadAction<string>) => {
+      state.lastName = action.payload;
+    },
     updateColor: (state, action: PayloadAction<string>) => {
       state.color = action.payload;
     },
@@ -80,6 +85,7 @@ export const {
   updatePhone,
   updateFontStyle,
   updateFontSize,
+  updateLastName,
   updateLayout,
 } = coverLetterSlice.actions;
 

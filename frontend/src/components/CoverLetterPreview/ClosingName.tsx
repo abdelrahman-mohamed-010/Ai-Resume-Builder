@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useAppDispatch, useAppSelector } from "../../hooks/reduxHooks";
-import { updateName } from "../../redux/coverLetterSlice";
-import { useDebounce } from "../../hooks/useDebounce";
+import { updateLastName } from "../../redux/coverLetterSlice";
+import { useDebounce } from "../../hooks/useDebounce.ts";
 
 const ClosingName: React.FC = () => {
-  const userName = useAppSelector((state) => state.coverLetter.name);
+  const userName = useAppSelector((state) => state.coverLetter.lastName);
   const [name, setName] = useState(userName);
 
   const debouncedName = useDebounce(name, 500);
@@ -12,7 +12,7 @@ const ClosingName: React.FC = () => {
   const dispatch = useAppDispatch();
 
   useEffect(() => {
-    dispatch(updateName(debouncedName));
+    dispatch(updateLastName(debouncedName));
   }, [debouncedName, dispatch]);
 
   return (

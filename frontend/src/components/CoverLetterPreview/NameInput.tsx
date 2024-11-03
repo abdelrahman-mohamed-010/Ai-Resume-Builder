@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useAppDispatch, useAppSelector } from "../../hooks/reduxHooks";
 import { updateName } from "../../redux/coverLetterSlice";
-import { useDebounce } from "../../hooks/useDebounce";
+import { useDebounce } from "../../hooks/useDebounce.ts";
 
 const NameInput: React.FC = () => {
   const userName = useAppSelector((state) => state.coverLetter.name);

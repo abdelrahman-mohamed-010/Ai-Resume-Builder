@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import { useAppDispatch, useAppSelector } from "../../hooks/reduxHooks";
 import { updateHr, updateContent } from "../../redux/coverLetterSlice";
-import { useDebounce } from "../../hooks/useDebounce"; 
+import { useDebounce } from "../../hooks/useDebounce.ts"; 
 
 const CoverLetterContent: React.FC = () => {
   const HrName = useAppSelector((state) => state.coverLetter.hr);
