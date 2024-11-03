@@ -4,7 +4,7 @@ interface CoverLetterState {
   name: string;
   date: string;
   adress: string;
-  phone: string; // string type to handle + sign before number
+  phone: string; 
   gmail: string;
   hr: string;
   content: string;
