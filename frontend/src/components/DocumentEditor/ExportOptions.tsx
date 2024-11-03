@@ -1,18 +1,24 @@
-import { useAppSelector } from "../../hooks/reduxHooks";
+import Modal from "../UI/Modal";
+import DownloadModal from "../UI/DownloadModal";
+import { useState } from "react";
 
 const ExportOptions: React.FC<{ type: string }> = ({ type }) => {
-  const user = useAppSelector((state) => state.coverLetter);
+  const [showModal, setShowModal] = useState(false);
 
   return (
     <>
+      {showModal && (
+        <Modal open={showModal}>
+          <DownloadModal onClose={() => setShowModal(false)} />
+        </Modal>
+      )}
+
       <div className="font-semibold text-sm mb-5 3xl:text-base">
         Export Options
       </div>
       <button
+        onClick={() => setShowModal(true)}
         className="block w-full rounded-3xl bg-black font-bold text-white p-3 mb-3 hover:bg-primary transition-all 3xl:p-4"
-        onClick={() => {
-          console.log(user);
-        }}
       >
         Download
       </button>
