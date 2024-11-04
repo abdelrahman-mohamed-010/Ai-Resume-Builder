@@ -6,6 +6,8 @@ import ResumeArchive from "./pages/ResumeArchive/ResumeArchive";
 import Home from "./pages/Home/Home";
 import Tips from "./pages/Tips/Tips";
 import Finalize_cover from "./pages/CoverLetter/Finalize-cover";
+import HowITWorks from "./pages/resume-builder/HowITWorks";
+import ContactInfo from "./pages/resume-builder/ContactInfo";
 
 const router = createBrowserRouter([
   {
@@ -18,7 +20,20 @@ const router = createBrowserRouter([
       },
       {
         path: "build-new-resume",
-        element: <div>build new resume</div>,
+        element: <HowITWorks />,
+      },
+      {
+        path: "builder",
+        children: [
+          {
+            path: "contact-info",
+            element: <ContactInfo />,
+          },
+          {
+            path: "experience",
+            element: <div>ex</div>,
+          },
+        ],
       },
       {
         path: "resume-archive",
