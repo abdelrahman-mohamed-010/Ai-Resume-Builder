@@ -1,22 +1,14 @@
 const ResumeShowCase: React.FC = () => {
   return (
-    <div className="max-w-4xl mx-auto p-8 bg-white shadow-lg rounded-lg text-gray-800">
+    <div className=" max-w-4xl mx-auto px-8 py-4 bg-white shadow-lg rounded-lg text-gray-800">
       {/* Header */}
-      <div className="flex items-center mb-8">
-        <img
-          src="https://via.placeholder.com/150"
-          alt="Profile"
-          className="w-32 h-32 rounded-full mr-6"
-        />
-        <div>
-          <h1 className="text-3xl font-bold">Alexander James Smith</h1>
-          <p className="text-lg text-gray-600">Senior Frontend Developer</p>
-          <p className="text-gray-500">
-            alexander.smith@example.com | (415) 555-0123 | San Francisco, CA
-          </p>
-        </div>
+      <div className=" mb-8">
+        <h1 className="text-3xl font-bold">Alexander James Smith</h1>
+        <p className="text-lg text-gray-600">Senior Frontend Developer</p>
+        <p className="text-gray-500">
+          alexander.smith@example.com | (415) 555-0123 | San Francisco, CA
+        </p>
       </div>
-
       {/* Summary */}
       <div className="mb-6">
         <h2 className="text-2xl font-semibold border-b-2 border-gray-200 pb-1 mb-2">
@@ -47,7 +39,10 @@ const ResumeShowCase: React.FC = () => {
             "Tailwind CSS",
             "Git",
             "Responsive Design",
-            "Testing",
+
+            "Jest",
+            "Framer Motion",
+            "Vite",
           ].map((skill) => (
             <span
               key={skill}
@@ -131,7 +126,7 @@ const ResumeShowCase: React.FC = () => {
       </div>
 
       {/* Footer */}
-      <div className="mt-8 text-center text-sm text-gray-500">
+      <div className="mt-8 text-center text-sm text-gray-500 flex justify-between">
         <p>
           Portfolio:{" "}
           <a
@@ -142,7 +137,7 @@ const ResumeShowCase: React.FC = () => {
           </a>
         </p>
         <p>
-          GitHub:{" "}
+          GitHub:
           <a
             href="https://github.com/alexsmith"
             className="text-blue-500 hover:underline"

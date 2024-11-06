@@ -9,7 +9,7 @@ interface DownloadModalProps {
 const ShowResume: React.FC<DownloadModalProps> = ({ onClose }) => {
   return (
     <motion.div
-      className="bg-white shadow-lg w-full  pt-8 relative"
+      className="bg-white shadow-lg h-screen overflow-y-scroll pt-8 relative"
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.3 }}
