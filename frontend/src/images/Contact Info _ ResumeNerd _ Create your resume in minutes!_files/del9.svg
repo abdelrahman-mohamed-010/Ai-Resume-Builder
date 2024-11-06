@@ -1,0 +1,115 @@
+<svg id="del9" version="1.1" baseProfile="full" xmlns="http://www.w3.org/2000/svg"  width="650" height="858" viewBox="0 0 650 858" style="margin:0 auto; __background:url(img/svg-6.jpg) no-repeat 0 0;">
+	<defs>
+		<style>
+			#del9 .h1{font-family:"Arial"; font-size:54px; text fill:#333333; font-weight:bold; ____fill:red}
+			#del9 .p2 {font-family:"Arial"; font-size:9px; fill:#333; ____fill:red}
+			#del9 .p4{font-family:"Arial"; font-size:12px; fill:#fff;     letter-spacing: 2px;text-transform: uppercase; ____fill:red}
+			#del9 .p3 {font-family:"Arial"; font-size:9px; fill:#fff; word-spacing: 4px; ____fill:red}
+			#del9 .p2b {font-family:"Arial"; font-size:11px; font-weight:600; fill:#333;____fill:red}
+			#del9 .h2 {font-family:"Arial"; font-size:11px; fill:#333;letter-spacing: 1px; font-weight:600; ____fill:red}
+			#del9 .subheding {font-family:"Arial"; font-size:10px; fill:#767774; font-weight:400; ____fill:red}
+			#del9 .preheding{font-family:"Arial"; font-size:11px; fill:#333; font-weight:600; ____fill:red}
+			#del9 .li-disc {fill:#333; ____fill:red}
+			#del9 .text-cap {font-size:20px;letter-spacing: 3px;fill: #fff;font-family:"Arial";}
+			#del9 .line{stroke:#fff;___stroke:#090;}
+
+
+		</style>
+	</defs>
+
+	<rect width="600" height="175" style="fill: #2f527b;" class="rect-del9" x="19" y="37"></rect>
+
+	<text x="62" y="92" class="text-icon">
+		<tspan x="60" y="132" class="text-cap"> STELLA WALKER </tspan> 
+	</text>
+	<text x="470" y="90" class="p3">(781) 669-5989,</text>
+	<text x="470" y="110" class="p3">jwalker@live.com,</text> 
+    <text x="470" y="130" class="p3">24Armor Lane,</text>
+    <text x="470" y="150" class="p3">North Easton</text> 
+
+<g transform="translate(0 10)">
+	<text x="60" y="260" class="h2 h2-del9">PROFESSIONAL</text>
+    <text x="60" y="280" class="h2 h2-del9">SUMMARY</text>	
+
+	<text x="194" y="260" class="p2">Successful sales professional with 10+ years experience in large-scale food and retail</text>	
+	<text x="194" y="280" class="p2">environments. Implement cost control measures to ensure operations remain within</text>
+	<text x="194" y="300" class="p2">company targets. Maximize bottom-line performance through PL, merchandising, staff</text>
+	<text x="194" y="320" class="p2">management, loss control and inventory management.</text>
+</g>
+<g transform="translate(0 20)">
+	<text x="60" y="360" class="h2 h2-del9">SKILLS</text>
+
+	<text x="194" y="360" class="p2">Executive team leadership</text>
+	<text x="194" y="380" class="p2">Inventory report generation</text>
+	<text x="194" y="400" class="p2">Client/Vendor relations</text>
+	<text x="350" y="360" class="p2">Market analysis</text>
+
+
+
+	<text x="350" y="380" class="p2">Sales management</text>
+	<text x="350" y="400" class="p2">Staff training</text>
+	<text x="466" y="360" class="p2">Customer relations</text>
+	<text x="466" y="380" class="p2">Process Improvements</text>
+</g>
+
+<g transform="translate(0 30)">
+		<text x="60" y="440" class="h2 h2-del9">EDUCATION</text>
+
+		 
+		<text x="195" y="450" class="p2">
+			<tspan x="195" y="440">Bachelor of Arts: Operational Managements</tspan>
+			<tspan x="195" y="460">San Francisco State University, San Francisco, CA, August 2011</tspan>			
+		</text>
+ 
+		<text x="195" y="490" class="p2">
+			<tspan x="195" y="490">Bachelor of Arts: Operational Managements</tspan>
+			<tspan x="195" y="510">San Francisco State University, San Francisco, CA, August 2011</tspan>			
+		</text>
+	</g>
+	<!--Core Qualification Section End-->
+<g transform="translate(0 15)">
+	<text x="60" y="580" class="h2 h2-del9">EXPERIENCE</text>
+ 
+	<text x="195" y="580" class="preheding">District Manager</text>
+	<text x="195" y="600" class="subheding">Verizon Wireless | San Francisco, CA, August 2011-Current</text>
+	
+	<g transform="translate(0 -25)">
+		<circle cx="195" cy="647" r="1" class="li-disc"></circle>			
+		<circle cx="195" cy="667" r="1" class="li-disc"></circle>			
+		<circle cx="195" cy="687" r="1" class="li-disc"></circle>
+		<circle cx="195" cy="707" r="1" class="li-disc"></circle>
+		
+
+		<text x="60" y="650" class="p2">
+			<tspan x="200" y="650">Directed recruitment/training/staff development initiatives.</tspan>
+			<tspan x="200" y="670">Compute taxes owed and prepare tax returns, ensuring compliance with reporting.</tspan>
+			<tspan x="200" y="690">Administered daily operations to ensure policies were adhered to by sales staff.</tspan>
+			<tspan x="200" y="710">Cultivated strong business relationships with customers to drive business.</tspan>
+		</text>		
+		 
+		<text x="195" y="750" class="preheding">District Manager</text>
+		<text x="195" y="770" class="subheding">Verizon Wireless | San Francisco, CA, August 2005-2011</text>
+		<g transform="translate(0 -22)">
+			<circle cx="195" cy="817" r="1" class="li-disc"></circle>			
+			<circle cx="195" cy="837" r="1" class="li-disc"></circle>			
+			<circle cx="195" cy="857" r="1" class="li-disc"></circle>
+			<circle cx="195" cy="877" r="1" class="li-disc"></circle>
+
+			<text x="24" y="900" class="p2">
+				<tspan x="200" y="820">Directed recruitment/training/staff development initiatives.</tspan>
+				<tspan x="200" y="840">Compute taxes owed and prepare tax returns, ensuring compliance with reporting.</tspan>
+				<tspan x="200" y="860">Administered daily operations to ensure policies were adhered to by sales staff.</tspan>
+				<tspan x="200" y="880">Cultivated strong business relationships with customers to drive business.</tspan>
+			</text>	
+		</g>
+</g>		
+	</g>
+
+	
+
+	<!-- Exp Second Section End -->
+
+	<!-- Education Section-->
+	
+
+</svg>

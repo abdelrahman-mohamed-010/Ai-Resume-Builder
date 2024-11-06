@@ -1,12 +1,12 @@
 import { motion } from "framer-motion";
 
 interface SubmitButtonProps {
-  isSubmitting: boolean;
+  isSubmitting?: boolean;
   buttonText: string;
 }
 
 const SubmitButton: React.FC<SubmitButtonProps> = ({
-  isSubmitting,
+  isSubmitting = false,
   buttonText,
 }) => {
   return (

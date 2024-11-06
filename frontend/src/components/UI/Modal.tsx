@@ -20,7 +20,8 @@ const Modal: React.FC<ModalProps> = ({ open, children }) => {
   return createPortal(
     <dialog
       ref={dialog}
-      className="modal fixed flex inset-0 items-center justify-center z-50 max-sm:items-start max-sm:pt-24"
+      // className="modal fixed flex inset-0 items-center justify-center z-50 max-sm:items-start max-sm:pt-24"
+      className="modal fixed flex inset-0 "
     >
       {children}
     </dialog>,
