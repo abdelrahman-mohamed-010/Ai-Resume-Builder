@@ -8,6 +8,9 @@ import Tips from "./pages/Tips/Tips";
 import Finalize_cover from "./pages/CoverLetter/Finalize-cover";
 import HowITWorks from "./pages/resume-builder/HowITWorks";
 import ContactInfo from "./pages/resume-builder/ContactInfo";
+import WorkExperience from "./pages/resume-builder/WorkExprience";
+import LoginPage from "./pages/LoginPage";
+import SignUpPage from "./pages/SignUpPage.tsx";
 
 const router = createBrowserRouter([
   {
@@ -31,7 +34,7 @@ const router = createBrowserRouter([
           },
           {
             path: "experience",
-            element: <div>ex</div>,
+            element: <WorkExperience />,
           },
         ],
       },
@@ -57,6 +60,14 @@ const router = createBrowserRouter([
         element: <div>creator</div>,
       },
     ],
+  },
+  {
+    path: "/Login",
+    element: <LoginPage />,
+  },
+  {
+    path: "/SignUp",
+    element: <SignUpPage />,
   },
 ]);
 
