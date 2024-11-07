@@ -4,12 +4,14 @@ import {
   FaCogs,
   FaEllipsisH,
 } from "react-icons/fa";
+import { PiPaperclipThin } from "react-icons/pi";
 
 const Stepper = ({ number: stepNumber = 2 }) => {
   const steps = [
     { label: "Contacts", icon: <FaAddressBook /> },
     { label: "Experience", icon: <FaBriefcase /> },
     { label: "Skills", icon: <FaCogs /> },
+    { label: "Summary", icon: <PiPaperclipThin /> },
     { label: "Etc", icon: <FaEllipsisH /> },
   ];
 

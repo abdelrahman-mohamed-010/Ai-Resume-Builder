@@ -1,11 +1,12 @@
-import { Link, useNavigate } from "react-router-dom";
-import { FaArrowLeft } from "react-icons/fa";
-import ResumeOverview from "./ResumeOverview";
 import { motion } from "framer-motion";
+import { FaArrowLeft } from "react-icons/fa";
+import { Link, useNavigate } from "react-router-dom";
+import Stepper from "./Stepper";
 import { IoIosArrowForward } from "react-icons/io";
-import WorkExperienceForm from "./WorkExperienceForm";
+import ResumeOverview from "./ResumeOverview";
+import SkillPicker from "./SkillPicker";
 
-const ContactInfo = () => {
+const SkillsPage = () => {
   const navigate = useNavigate();
 
   return (
@@ -16,7 +17,7 @@ const ContactInfo = () => {
       exit={{ opacity: 0 }}
       transition={{ duration: 0.5 }}
     >
-      <div className=" flex gap-4 h-fit items-end">
+      <div className=" flex gap-4 h-fit items-start">
         <div className="w-full">
           <button
             onClick={() => navigate(-1)}
@@ -24,27 +25,25 @@ const ContactInfo = () => {
           >
             <FaArrowLeft /> Go Back
           </button>
-          <h1 className="font-bold text-3xl mb-2">
-            Tell us about your work experience
-          </h1>
+          <h1 className="font-bold text-3xl mb-2">Tell us about your skills</h1>
           <p className="text-lg text-neutral-600">
-            Include details about your previous jobs, including job title and
-            employer.
+            Include details about your expertise, such as specific tools,
+            technologies, and relevant proficiencies.
           </p>
-          <WorkExperienceForm />
+          <Stepper number={3} />
+          <SkillPicker />
         </div>
         <ResumeOverview />
       </div>
       <div className=" flex justify-end mt-8">
         <Link
-          to={"/builder/skills"}
+          to={"/builder/summary"}
           className=" bg-black px-5 py-3 text-lg rounded-full text-white font-semibold shadow-md transition-all duration-300 transform hover:scale-105 hover:shadow-lg flex items-center gap-1 "
         >
-          Next : Skills <IoIosArrowForward className=" mt-1" />
+          Next : Summary <IoIosArrowForward className=" mt-1" />
         </Link>
       </div>
     </motion.div>
   );
 };
-
-export default ContactInfo;
+export default SkillsPage;

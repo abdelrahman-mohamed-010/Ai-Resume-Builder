@@ -11,6 +11,7 @@ import ContactInfo from "./pages/resume-builder/ContactInfo";
 import WorkExperience from "./pages/resume-builder/WorkExprience";
 import LoginPage from "./pages/LoginPage";
 import SignUpPage from "./pages/SignUpPage.tsx";
+import Skills from "./pages/resume-builder/SkillsPage.tsx";
 
 const router = createBrowserRouter([
   {
@@ -35,6 +36,14 @@ const router = createBrowserRouter([
           {
             path: "experience",
             element: <WorkExperience />,
+          },
+          {
+            path: "skills",
+            element: <Skills />,
+          },
+          {
+            path: "summary",
+            element: <summary />,
           },
         ],
       },

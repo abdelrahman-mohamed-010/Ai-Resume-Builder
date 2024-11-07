@@ -22,7 +22,7 @@ const LoginPage: React.FC = () => {
         </h2>
         <form onSubmit={handleLogin} className="space-y-6">
           <div>
-            <label className="block text-sm font-medium text-gray-600">
+            <label className="block text-sm font-medium text-gray-600 mb-2">
               Email
             </label>
             <input
@@ -35,7 +35,7 @@ const LoginPage: React.FC = () => {
             />
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-600">
+            <label className="block text-sm font-medium text-gray-600 mb-2">
               Password
             </label>
             <input

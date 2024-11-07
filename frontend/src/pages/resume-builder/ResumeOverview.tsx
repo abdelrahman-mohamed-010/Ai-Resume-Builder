@@ -13,6 +13,7 @@ const ResumeOverview = () => {
           <ShowResume onClose={() => setShowModal(false)} />
         </Modal>
       )}
+
       <div className=" w-[360px] h-fit mt-16 p-4 bg-white shadow-md rounded-lg border border-gray-200 text-gray-800 text-[10px] relative overflow-hidden">
         <button
           onClick={() => setShowModal(true)}
@@ -84,7 +85,7 @@ const ResumeOverview = () => {
             </div>
           </div>
         </div>
-      </div>{" "}
+      </div>
     </>
   );
 };
