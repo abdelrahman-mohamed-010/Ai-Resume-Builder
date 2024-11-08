@@ -47,14 +47,14 @@ const contactInfoForm = () => {
 
             {/* City */}
             <div>
-              <label htmlFor="city" className="block text-neutral-700 mb-2">
-                City
+              <label htmlFor="Job Role" className="block text-neutral-700 mb-2">
+                Job Role
               </label>
               <input
                 type="text"
-                id="city"
-                name="city"
-                placeholder="e.g. Durban"
+                id="Job Role"
+                name="Job Role"
+                placeholder="e.g., Software Engineer"
                 className="border border-neutral-400 rounded p-3 w-full focus:border-transparent focus:outline-2 focus:outline-primary"
               />
             </div>
@@ -64,14 +64,14 @@ const contactInfoForm = () => {
           <div className="flex flex-col gap-4 w-full">
             {/* Country */}
             <div>
-              <label htmlFor="country" className="block text-neutral-700 mb-2">
-                Country
+              <label htmlFor="adress" className="block text-neutral-700 mb-2">
+                Adress
               </label>
               <input
                 type="text"
-                id="country"
-                name="country"
-                placeholder="e.g. South Africa"
+                id="adress"
+                name="adress"
+                placeholder="e.g., 456 Elm Street"
                 className="border border-neutral-400 rounded p-3 w-full focus:border-transparent focus:outline-2 focus:outline-primary"
               />
             </div>
