@@ -126,7 +126,7 @@ const contactInfoForm = () => {
             </div>
           </div>
         </div>
-      </form>{" "}
+      </form>
     </>
   );
 };

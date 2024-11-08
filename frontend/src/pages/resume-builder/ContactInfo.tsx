@@ -10,7 +10,7 @@ const ContactInfo = () => {
 
   return (
     <motion.div
-      className="p-8 h-screen"
+      className="p-8 min-h-screen"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
@@ -34,10 +34,10 @@ const ContactInfo = () => {
         </div>
         <ResumeOverview />
       </div>
-      <div className=" flex justify-end mt-8">
+      <div className=" flex justify-end  mt-8">
         <Link
           to={"/builder/experience"}
-          className=" bg-black px-5 py-3 text-lg rounded-full text-white font-semibold shadow-md transition-all duration-300 transform hover:scale-105 hover:shadow-lg flex items-center gap-1 "
+          className=" bg-black px-5 py-3 text-lg rounded-full text-white font-semibold shadow-md transition-all duration-300 transform hover:scale-105 hover:shadow-lg flex items-center gap-1 text-nowrap "
         >
           Next : Work Exprience <IoIosArrowForward className=" mt-1" />
         </Link>

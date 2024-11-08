@@ -16,8 +16,8 @@ const ContactInfo = () => {
       exit={{ opacity: 0 }}
       transition={{ duration: 0.5 }}
     >
-      <div className=" flex gap-4 h-fit items-end">
-        <div className="w-full">
+      <div className=" flex gap-4 h-fit ">
+        <div className=" w-full">
           <button
             onClick={() => navigate(-1)}
             className="text-indigo-800 font-semibold hover:underline mb-3 flex items-center gap-2 justify-center"
@@ -33,15 +33,15 @@ const ContactInfo = () => {
           </p>
           <WorkExperienceForm />
         </div>
-        <ResumeOverview />
-      </div>
-      <div className=" flex justify-end mt-8">
-        <Link
-          to={"/builder/skills"}
-          className=" bg-black px-5 py-3 text-lg rounded-full text-white font-semibold shadow-md transition-all duration-300 transform hover:scale-105 hover:shadow-lg flex items-center gap-1 "
-        >
-          Next : Skills <IoIosArrowForward className=" mt-1" />
-        </Link>
+        <div className="max-w-[360px] flex flex-col gap-6 items-end ">
+          <ResumeOverview />
+          <Link
+            to={"/builder/skills"}
+            className=" bg-black px-5 py-3 text-lg rounded-full text-white font-semibold shadow-md transition-all duration-300 transform hover:scale-105 hover:shadow-lg flex items-center gap-1 w-fit"
+          >
+            Next : Skills <IoIosArrowForward className=" mt-1" />
+          </Link>
+        </div>
       </div>
     </motion.div>
   );

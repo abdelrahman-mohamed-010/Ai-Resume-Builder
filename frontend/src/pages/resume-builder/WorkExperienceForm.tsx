@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import { LiaBrainSolid } from "react-icons/lia";
 import Stepper from "./Stepper";
 
 const WorkExperienceForm = () => {
@@ -61,6 +61,27 @@ const WorkExperienceForm = () => {
                 className="border border-neutral-400 rounded p-3 w-full focus:border-transparent focus:outline-2 focus:outline-primary"
                 placeholder="e.g., Google"
               />
+            </div>
+
+            <div className=" w-full">
+              <label
+                htmlFor="Responsibilities"
+                className="block text-neutral-700 mb-2"
+              >
+                Job Responsibilities
+              </label>
+              <textarea
+                rows={5}
+                name="Responsibilities"
+                id="Responsibilities"
+                className="border border-neutral-400 rounded p-3 w-full focus:border-transparent focus:outline-2 focus:outline-primary "
+              ></textarea>
+              <button
+                type="button"
+                className=" bg-primary hover:bg-indigo-800 transition-all rounded-lg px-5 py-3 w-fit font-semibold text-white flex gap-2 items-center"
+              >
+                <LiaBrainSolid className=" w-6 h-6" /> Generate From Ai
+              </button>
             </div>
           </div>
 
