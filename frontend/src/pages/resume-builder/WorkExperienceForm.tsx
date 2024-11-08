@@ -78,7 +78,7 @@ const WorkExperienceForm = () => {
               ></textarea>
               <button
                 type="button"
-                className=" bg-primary hover:bg-indigo-800 transition-all rounded-lg px-5 py-3 w-fit font-semibold text-white flex gap-2 items-center"
+                className=" bg-primary hover:bg-indigo-800 transition-all rounded-lg px-5 py-3 w-fit font-semibold text-white flex gap-2 items-center mt-2"
               >
                 <LiaBrainSolid className=" w-6 h-6" /> Generate From Ai
               </button>

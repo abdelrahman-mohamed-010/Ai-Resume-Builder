@@ -36,7 +36,7 @@ const ContactInfo = () => {
         <div className="max-w-[360px] flex flex-col gap-6 items-end ">
           <ResumeOverview />
           <Link
-            to={"/builder/skills"}
+            to={"/builder/RecreateExperience"}
             className=" bg-black px-5 py-3 text-lg rounded-full text-white font-semibold shadow-md transition-all duration-300 transform hover:scale-105 hover:shadow-lg flex items-center gap-1 w-fit"
           >
             Next : Skills <IoIosArrowForward className=" mt-1" />
