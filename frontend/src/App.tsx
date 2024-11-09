@@ -13,6 +13,8 @@ import LoginPage from "./pages/LoginPage";
 import SignUpPage from "./pages/SignUpPage.tsx";
 import Skills from "./pages/resume-builder/SkillsPage.tsx";
 import RecreateExp from "./pages/resume-builder/RecreateExp.tsx";
+import Eeducation from "./pages/resume-builder/Eeducation.tsx";
+import Summary from "./pages/resume-builder/Summary.tsx";
 
 const router = createBrowserRouter([
   {
@@ -48,7 +50,11 @@ const router = createBrowserRouter([
           },
           {
             path: "summary",
-            element: <summary />,
+            element: <Summary />,
+          },
+          {
+            path: "education",
+            element: <Eeducation />,
           },
         ],
       },

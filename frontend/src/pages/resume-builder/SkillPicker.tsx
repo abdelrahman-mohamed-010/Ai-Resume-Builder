@@ -47,7 +47,9 @@ const SkillPicker: React.FC = () => {
 
   return (
     <div className="w-full mt-8">
-      <h2 className="text-xl font-semibold mb-2">Pick Your Skills</h2>
+      <h2 className="text-xl font-semibold mb-2 dark:text-neutral-300">
+        Pick Your Skills
+      </h2>
       <div className="flex items-center gap-2 mb-4">
         <input
           type="text"
@@ -55,7 +57,7 @@ const SkillPicker: React.FC = () => {
           onChange={(e) => setNewSkill(e.target.value)}
           onKeyDown={handleKeyDown}
           placeholder="Enter a skill"
-          className="border border-gray-300 px-3 py-3 rounded-md w-full focus:outline-none focus:border-blue-500"
+          className="border border-gray-300 px-3 py-3 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-primary dark:bg-inherit dark:text-neutral-100 dark:border-neutral-600 "
         />
       </div>
 
@@ -63,7 +65,7 @@ const SkillPicker: React.FC = () => {
         <div className="w-full flex justify-between items-start gap-6">
           <div ref={scope}>
             <h3
-              className={`font-medium mb-6 text-lg ${
+              className={`font-medium mb-6 text-lg dark:text-neutral-300 ${
                 isDeleteMode ? " text-red-500" : ""
               }`}
             >
@@ -76,8 +78,8 @@ const SkillPicker: React.FC = () => {
                     key={skill}
                     className={` font-medium px-2 pb-1 border-2  tracking-wide text-white  rounded relative ${
                       isDeleteMode
-                        ? " cursor-pointer bg-red-900 border-red-900"
-                        : "border-indigo-900 bg-indigo-900"
+                        ? " cursor-pointer bg-red-900 border-red-900 "
+                        : "border-indigo-900 bg-indigo-900 dark:border-indigo-600 dark:bg-inherit"
                     }`}
                     layout
                     onClick={() => handleSkillClick(skill)}
@@ -97,7 +99,7 @@ const SkillPicker: React.FC = () => {
               />
             ) : (
               <VscEdit
-                className={`w-6 h-6 mt-2 cursor-pointer transition-all`}
+                className={`w-6 h-6 mt-2 cursor-pointer transition-all dark:text-neutral-300`}
               />
             )}
           </button>

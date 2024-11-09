@@ -12,7 +12,7 @@ const steps = [
         viewBox="0 0 24 24"
         strokeWidth="1.5"
         stroke="currentColor"
-        className="w-8 h-8 text-yellow-500"
+        className="w-8 h-8 text-yellow-500 dark:text-yellow-300"
       >
         <path
           strokeLinecap="round"
@@ -21,7 +21,7 @@ const steps = [
         />
       </svg>
     ),
-    bgColor: "bg-yellow-100",
+    bgColor: "bg-yellow-100 dark:bg-yellow-800",
   },
   {
     id: 2,
@@ -33,7 +33,7 @@ const steps = [
         viewBox="0 0 24 24"
         strokeWidth="1.5"
         stroke="currentColor"
-        className="w-8 h-8 text-indigo-400"
+        className="w-8 h-8 text-indigo-400 dark:text-indigo-300"
       >
         <path
           strokeLinecap="round"
@@ -42,7 +42,7 @@ const steps = [
         />
       </svg>
     ),
-    bgColor: "bg-indigo-100",
+    bgColor: "bg-indigo-100 dark:bg-indigo-800",
   },
   {
     id: 3,
@@ -54,7 +54,7 @@ const steps = [
         viewBox="0 0 24 24"
         strokeWidth="1.5"
         stroke="currentColor"
-        className="w-8 h-8 text-green-500"
+        className="w-8 h-8 text-green-500 dark:text-green-300"
       >
         <path
           strokeLinecap="round"
@@ -63,7 +63,7 @@ const steps = [
         />
       </svg>
     ),
-    bgColor: "bg-green-100",
+    bgColor: "bg-green-100 dark:bg-green-800",
   },
 ];
 
@@ -71,13 +71,15 @@ const HowItWorks = () => {
   return (
     <section className="mt-28 max-w-md mx-auto">
       <div className="mx-auto text-center ">
-        <div className="text-2xl font-extrabold mb-1 text-primary">
+        <div className="text-2xl font-extrabold mb-1 text-primary dark:text-white">
           3 Simple Steps
         </div>
-        <h1 className="text-[50px] font-bold">Getting Started</h1>
+        <h1 className="text-[50px] font-bold text-gray-800 dark:text-white">
+          Getting Started
+        </h1>
       </div>
 
-      <div className="bg-white text-gray-800 flex flex-col gap-8 justify-center p-8 ">
+      <div className="bg-white text-gray-800 dark:bg-gray-900 dark:text-gray-200 flex flex-col gap-8 justify-center p-8">
         {steps.map((step, index) => (
           <motion.div
             key={step.id}
@@ -87,12 +89,14 @@ const HowItWorks = () => {
             transition={{ duration: 0.5, delay: index * 0.3 }}
           >
             <div className={`${step.bgColor} p-2 rounded-lg`}>{step.icon}</div>
-            <p className="text-lg text-indigo-800">{step.description}</p>
+            <p className="text-lg text-indigo-800 dark:text-indigo-300">
+              {step.description}
+            </p>
           </motion.div>
         ))}
         <Link
           to={"/builder/contact-info"}
-          className="bg-gradient-to-r text-center from-indigo-400 to-indigo-600 text-white py-4 px-6 rounded-full font-semibold shadow-md"
+          className="bg-gradient-to-r text-center from-indigo-400 to-indigo-600 text-white py-4 px-6 rounded-full font-semibold shadow-md dark:from-indigo-700 dark:to-indigo-800"
         >
           Let’s Get Started
         </Link>

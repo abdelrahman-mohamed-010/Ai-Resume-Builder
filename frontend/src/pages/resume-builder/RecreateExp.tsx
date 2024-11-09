@@ -92,12 +92,12 @@ const RecreateExp: React.FC = () => {
               }}
             ></motion.div>
           </motion.button>
-          <button
-            className="px-8 py-2 border border-indigo-500 text-indigo-600 dark:text-indigo-400 font-semibold rounded-full shadow-sm hover:bg-indigo-50 dark:hover:bg-indigo-700 transition duration-300"
+          <Link to={"/builder/skills"}
+            className="px-8 py-2 border border-indigo-500 text-indigo-600 font-semibold rounded-full shadow-sm dark:text-white transition duration-300"
             onClick={() => console.log("Proceed to next step")}
           >
             Skip / Finish
-          </button>
+          </Link>
         </div>
       </motion.div>
     </motion.div>

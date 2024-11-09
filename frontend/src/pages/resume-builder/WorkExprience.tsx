@@ -20,14 +20,14 @@ const ContactInfo = () => {
         <div className=" w-full">
           <button
             onClick={() => navigate(-1)}
-            className="text-indigo-800 font-semibold hover:underline mb-3 flex items-center gap-2 justify-center"
+            className="text-indigo-800 dark:text-indigo-600 font-semibold hover:underline mb-3 flex items-center gap-2 justify-center"
           >
             <FaArrowLeft /> Go Back
           </button>
-          <h1 className="font-bold text-3xl mb-2">
+          <h1 className="font-bold dark:text-white text-3xl mb-2">
             Tell us about your work experience
           </h1>
-          <p className="text-lg text-neutral-600">
+          <p className="text-lg text-neutral-600 dark:text-neutral-300">
             Include details about your previous jobs, including job title and
             employer.
           </p>
@@ -37,7 +37,7 @@ const ContactInfo = () => {
           <ResumeOverview />
           <Link
             to={"/builder/RecreateExperience"}
-            className=" bg-black px-5 py-3 text-lg rounded-full text-white font-semibold shadow-md transition-all duration-300 transform hover:scale-105 hover:shadow-lg flex items-center gap-1 w-fit"
+            className=" bg-black px-5 py-3 text-lg rounded-full text-white font-semibold shadow-md transition-all duration-300 transform hover:scale-105 hover:shadow-lg flex items-center gap-1 w-fit dark:bg-accent dark:text-black "
           >
             Next : Skills <IoIosArrowForward className=" mt-1" />
           </Link>

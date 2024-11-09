@@ -5,6 +5,7 @@ import {
   FaEllipsisH,
 } from "react-icons/fa";
 import { PiPaperclipThin } from "react-icons/pi";
+import { IoMdSchool } from "react-icons/io";
 
 const Stepper = ({ number: stepNumber = 2 }) => {
   const steps = [
@@ -12,6 +13,7 @@ const Stepper = ({ number: stepNumber = 2 }) => {
     { label: "Experience", icon: <FaBriefcase /> },
     { label: "Skills", icon: <FaCogs /> },
     { label: "Summary", icon: <PiPaperclipThin /> },
+    { label: "Education", icon: <IoMdSchool /> },
     { label: "Etc", icon: <FaEllipsisH /> },
   ];
 
@@ -21,14 +23,18 @@ const Stepper = ({ number: stepNumber = 2 }) => {
         <div className="relative w-full flex justify-center" key={index}>
           <span
             className={`w-8 h-8 rounded-full ${
-              stepNumber > index ? "bg-indigo-700" : "bg-indigo-200"
+              stepNumber > index
+                ? "bg-indigo-700 dark:bg-indigo-500"
+                : "bg-indigo-200 dark:bg-gray-600"
             } text-white text-center flex items-center justify-center`}
           >
             {step.icon}
           </span>
           <div
             className={`absolute w-full h-1 ${
-              stepNumber > index + 1 ? "bg-indigo-700" : "bg-indigo-200"
+              stepNumber > index + 1
+                ? "bg-indigo-700 dark:bg-indigo-500"
+                : "bg-indigo-200 dark:bg-gray-600"
             } top-1/2 -translate-y-1/2 left-1/2 -z-10 ${
               index + 1 === steps.length ? "hidden" : ""
             }`}
