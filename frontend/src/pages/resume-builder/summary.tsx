@@ -4,19 +4,18 @@ import { motion } from "framer-motion";
 import { IoIosArrowForward } from "react-icons/io";
 import { LiaBrainSolid } from "react-icons/lia";
 import { useState } from "react";
-import Stepper from "./Stepper"; // Import the Stepper component
+import Stepper from "./Stepper";
 import ResumeOverview from "./ResumeOverview";
 
 const Summary = () => {
   const navigate = useNavigate();
-  const [customSummary, setCustomSummary] = useState<string>(""); // Store custom summary text
+  const [customSummary, setCustomSummary] = useState<string>("");
   const [aiGeneratedSummaries, setAiGeneratedSummaries] = useState<string[]>(
     []
   );
 
   const handleAddAISummary = (summary: string) => {
-    // When AI-generated summary is clicked, it gets set in the text area
-    setCustomSummary(summary); // Set the selected AI summary to the text area
+    setCustomSummary(summary);
   };
 
   const handleGenerateAISummaries = () => {
@@ -29,7 +28,6 @@ const Summary = () => {
     setAiGeneratedSummaries(newSummaries);
   };
 
-  // Motion variants for staggering animation
   const summaryVariants = {
     initial: { opacity: 0, y: 20 },
     animate: { opacity: 1, y: 0 },
