@@ -1,11 +1,7 @@
-import {
-  FaAddressBook,
-  FaBriefcase,
-  FaCogs,
-  FaEllipsisH,
-} from "react-icons/fa";
+import { FaAddressBook, FaBriefcase, FaCogs } from "react-icons/fa";
 import { PiPaperclipThin } from "react-icons/pi";
 import { IoMdSchool } from "react-icons/io";
+import { MdDashboardCustomize } from "react-icons/md";
 
 const Stepper = ({ number: stepNumber = 2 }) => {
   const steps = [
@@ -14,7 +10,7 @@ const Stepper = ({ number: stepNumber = 2 }) => {
     { label: "Skills", icon: <FaCogs /> },
     { label: "Summary", icon: <PiPaperclipThin /> },
     { label: "Education", icon: <IoMdSchool /> },
-    { label: "Etc", icon: <FaEllipsisH /> },
+    { label: "custom", icon: <MdDashboardCustomize /> },
   ];
 
   return (

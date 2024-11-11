@@ -4,9 +4,8 @@ import { motion } from "framer-motion";
 import { IoIosArrowForward } from "react-icons/io";
 import Stepper from "./Stepper";
 import ResumeOverview from "./ResumeOverview";
-import AddEducation from "./AddEducation";
 
-const Eeducation = () => {
+const Custom = () => {
   const navigate = useNavigate();
 
   return (
@@ -28,15 +27,14 @@ const Eeducation = () => {
               <FaArrowLeft /> Go Back
             </button>
             <h1 className="font-bold dark:text-white text-2xl sm:text-3xl mb-2">
-              Your Education Journey
+              Your Custom Section
             </h1>
             {/* Stepper Component */}
-            <Stepper number={5} />
+            <Stepper number={6} />
             <p className="text-base sm:text-lg mt-8 text-neutral-600 dark:text-neutral-300">
-              Share your educational background, including degrees,
-              certifications, and key achievements.
+              This is the perfect place to highlight any unique experience or
+              skill.
             </p>
-            <AddEducation />
           </div>
           <div className=" flex justify-end flex-col items-end gap-7 mt-4">
             <ResumeOverview />
@@ -44,7 +42,7 @@ const Eeducation = () => {
               to={"/builder/custom"}
               className=" bg-black px-5 py-3 text-lg rounded-full text-white font-semibold shadow-md transition-all duration-300 transform hover:scale-105 hover:shadow-lg flex items-center gap-1 dark:bg-accent dark:text-black w-fit"
             >
-              Next : Custom <IoIosArrowForward className=" mt-1" />
+              Next : Preview & Download <IoIosArrowForward className=" mt-1" />
             </Link>
           </div>
         </div>
@@ -53,4 +51,4 @@ const Eeducation = () => {
   );
 };
 
-export default Eeducation;
+export default Custom;

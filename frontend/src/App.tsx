@@ -1,6 +1,6 @@
 import React from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Layout from "./components/UI/Layout";
+import Layout from "./components/UI/Layout.tsx";
 import SelectCareer from "./pages/CoverLetter/SelectCareer";
 import ResumeArchive from "./pages/ResumeArchive/ResumeArchive";
 import Home from "./pages/Home/Home";
@@ -15,6 +15,7 @@ import Skills from "./pages/resume-builder/SkillsPage.tsx";
 import RecreateExp from "./pages/resume-builder/RecreateExp.tsx";
 import Eeducation from "./pages/resume-builder/Eeducation.tsx";
 import Summary from "./pages/resume-builder/Summary.tsx";
+import Custom from "./pages/resume-builder/Custom.tsx";
 
 const router = createBrowserRouter([
   {
@@ -55,6 +56,10 @@ const router = createBrowserRouter([
           {
             path: "education",
             element: <Eeducation />,
+          },
+          {
+            path: "custom",
+            element: <Custom />,
           },
         ],
       },

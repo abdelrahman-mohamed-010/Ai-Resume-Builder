@@ -2,6 +2,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import "react-quill/dist/quill.snow.css";
 
 .modal {
   &::backdrop {
@@ -9,3 +10,9 @@
   }
 }
 
+.ProseMirror {
+  border-radius: 6px;
+  padding: 8px;
+  border: #d1d5db solid 2px;
+  height: 206px;
+}
