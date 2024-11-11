@@ -16,3 +16,13 @@
   border: #d1d5db solid 2px;
   height: 206px;
 }
+
+.rsw-ce ul {
+  list-style: disc;
+  padding-left: 2em;
+}
+
+.rsw-ce ol {
+  list-style: decimal;
+  padding-left: 2em;
+}

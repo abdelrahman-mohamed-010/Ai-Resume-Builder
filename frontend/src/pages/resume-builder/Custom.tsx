@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { IoIosArrowForward } from "react-icons/io";
 import Stepper from "./Stepper";
 import ResumeOverview from "./ResumeOverview";
+import TxtEditor from "./TxtEditor";
 
 const Custom = () => {
   const navigate = useNavigate();
@@ -35,9 +36,13 @@ const Custom = () => {
               This is the perfect place to highlight any unique experience or
               skill.
             </p>
+            <div className=" mt-2 max-w-[calc(100wh-400px)]">
+              <TxtEditor />
+            </div>
           </div>
-          <div className=" flex justify-end flex-col items-end gap-7 mt-4">
+          <div className=" flex justify-end flex-col items-end gap-7 mt-4 ">
             <ResumeOverview />
+
             <Link
               to={"/builder/custom"}
               className=" bg-black px-5 py-3 text-lg rounded-full text-white font-semibold shadow-md transition-all duration-300 transform hover:scale-105 hover:shadow-lg flex items-center gap-1 dark:bg-accent dark:text-black w-fit"
