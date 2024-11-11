@@ -41,6 +41,7 @@ export default function TxtEditor() {
           <BtnLink />
         </Toolbar>
       </Editor>
+      
     </EditorProvider>
   );
 }

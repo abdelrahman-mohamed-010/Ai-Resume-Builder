@@ -44,7 +44,7 @@ const Custom = () => {
             <ResumeOverview />
 
             <Link
-              to={"/builder/custom"}
+              to={"/builder/RecreateCustom"}
               className=" bg-black px-5 py-3 text-lg rounded-full text-white font-semibold shadow-md transition-all duration-300 transform hover:scale-105 hover:shadow-lg flex items-center gap-1 dark:bg-accent dark:text-black w-fit"
             >
               Next : Preview & Download <IoIosArrowForward className=" mt-1" />
