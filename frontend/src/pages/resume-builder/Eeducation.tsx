@@ -19,10 +19,10 @@ const Eeducation = () => {
         <div className=" flex w-full gap-4 items-start">
           <div className=" relative w-full">
             <PageHeader
-              header="Tell us about your skills"
-              paragraph="Highlight your academic achievements and provide a comprehensive overview of your educational journey"
+              header="Tell us about your Education"
+              paragraph="Highlight your academic Education and provide a comprehensive overview of your educational journey"
             />
-            <Stepper number={5} />
+            <Stepper number={4} />
             <AddEducation />
           </div>
           <div className=" flex justify-end flex-col items-end gap-7 mt-4">

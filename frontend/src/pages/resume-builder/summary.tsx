@@ -47,7 +47,7 @@ const Summary = () => {
               header="Summarize Your Experience"
               paragraph="Write a brief summary or let AI generate suggestions for you."
             />
-            <Stepper number={4} />
+            <Stepper number={2} />
             <textarea
               className="border border-neutral-400 rounded p-2 mt-8 mb-3 w-full h-[247px] focus:outline-none focus:ring-2 focus:ring-primary dark:bg-inherit dark:text-neutral-100 dark:border-neutral-600"
               placeholder="Write your own summary here..."

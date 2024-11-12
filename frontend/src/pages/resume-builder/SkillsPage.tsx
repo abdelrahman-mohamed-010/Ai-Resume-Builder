@@ -21,7 +21,7 @@ const SkillsPage = () => {
             paragraph=" Include details about your expertise, such as specific tools,
             technologies, and relevant proficiencies."
           />
-          <Stepper number={3} />
+          <Stepper number={5} />
           <SkillPicker />
         </div>
         <div className=" max-md:hidden">

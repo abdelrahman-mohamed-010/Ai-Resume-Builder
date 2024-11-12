@@ -36,7 +36,7 @@ const WorkExperienceForm = () => {
 
   return (
     <>
-      <Stepper number={2} />
+      <Stepper number={3} />
       <form>
         <div className="text-sm mt-6 font-semibold text-neutral-600 dark:text-neutral-300">
           * indicates a required field
