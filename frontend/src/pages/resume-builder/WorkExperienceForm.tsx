@@ -31,8 +31,8 @@ const WorkExperienceForm = () => {
       }));
     }
   };
-  
-  console.log(formData)
+
+  console.log(formData);
 
   return (
     <>
@@ -46,6 +46,7 @@ const WorkExperienceForm = () => {
           <div className="flex w-1/2 flex-col gap-4">
             <InputField
               label="Job Title"
+              type="text"
               id="jobTitle"
               name="jobTitle"
               placeholder="e.g., Software Engineer"
@@ -59,6 +60,7 @@ const WorkExperienceForm = () => {
               placeholder="e.g., Google"
               value={formData.employer}
               onChange={handleChange}
+              type={"text"}
             />
             <div className="w-full">
               <label
@@ -86,6 +88,7 @@ const WorkExperienceForm = () => {
           <div className="flex flex-col gap-4 w-1/2">
             <InputField
               label="Country"
+              type="text"
               id="country"
               name="country"
               placeholder="e.g., USA"

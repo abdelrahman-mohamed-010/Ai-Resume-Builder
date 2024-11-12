@@ -24,7 +24,7 @@ const ContactInfoForm: React.FC = () => {
   return (
     <>
       <Stepper number={1} />
-      <form>
+      <form className="">
         <div className="text-sm mt-6 font-semibold text-neutral-600 dark:text-neutral-200">
           * indicates a required field
         </div>

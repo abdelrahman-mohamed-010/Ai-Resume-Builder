@@ -41,7 +41,6 @@ const Summary = () => {
       transition={{ duration: 0.5 }}
     >
       <div className="flex w-full flex-col lg:flex-row gap-4 lg:gap-8 h-fit items-end">
-        {/* Header with Back Button */}
         <div className=" flex w-full gap-4 items-start">
           <div className=" w-full">
             <PageHeader
@@ -49,7 +48,6 @@ const Summary = () => {
               paragraph="Write a brief summary or let AI generate suggestions for you."
             />
             <Stepper number={4} />
-            {/* Custom Summary Input and AI-Generated Section */}
             <textarea
               className="border border-neutral-400 rounded p-2 mt-8 mb-3 w-full h-[247px] focus:outline-none focus:ring-2 focus:ring-primary dark:bg-inherit dark:text-neutral-100 dark:border-neutral-600"
               placeholder="Write your own summary here..."
@@ -57,7 +55,6 @@ const Summary = () => {
               value={customSummary}
               onChange={(e) => setCustomSummary(e.target.value)}
             />
-            {/* Generate from AI Button */}
             <button
               type="button"
               onClick={handleGenerateAISummaries}
@@ -88,7 +85,7 @@ const Summary = () => {
                     >
                       <p
                         className="text-neutral-700 dark:text-neutral-300 flex-1 mr-3 hover:scale-105 transition-all cursor-pointer"
-                        onClick={() => handleAddAISummary(summary)} // Set clicked AI summary to textarea
+                        onClick={() => handleAddAISummary(summary)}
                       >
                         {summary}
                       </p>

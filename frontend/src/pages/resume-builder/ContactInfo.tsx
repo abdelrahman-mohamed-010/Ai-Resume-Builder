@@ -21,9 +21,11 @@ const ContactInfo = () => {
           />
           <ContactInfoForm />
         </div>
-        <ResumeOverview />
+        <div className=" mb-4">
+          <ResumeOverview />
+        </div>
       </div>
-      <div className=" flex justify-end  mt-8">
+      <div className=" flex justify-end  mt-4">
         <NextBtn NextTxt="Work Exprience" link="experience" />
       </div>
     </motion.div>
