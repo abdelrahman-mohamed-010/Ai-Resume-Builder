@@ -27,7 +27,7 @@ export default function TxtEditor() {
       <Editor
         value={value}
         onChange={onChange}
-        className="h-[230px] dark:text-white "
+        className="h-[233px] dark:text-white "
       >
         <Toolbar>
           <BtnBold />
@@ -41,7 +41,6 @@ export default function TxtEditor() {
           <BtnLink />
         </Toolbar>
       </Editor>
-      
     </EditorProvider>
   );
 }

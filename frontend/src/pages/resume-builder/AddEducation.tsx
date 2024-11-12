@@ -8,7 +8,7 @@ const AddEducation = () => {
   const [isCurrently, setIsCurrently] = useState(true);
 
   return (
-    <div className="p-6 dark:bg-inherit w-full">
+    <div className="p-6 mt-6 dark:bg-inherit w-full">
       <div className="flex mb-6">
         <button
           onClick={() => setFormType("education")}

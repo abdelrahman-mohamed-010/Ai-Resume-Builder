@@ -1,14 +1,12 @@
 import { motion } from "framer-motion";
-import { FaArrowLeft } from "react-icons/fa";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Stepper from "./Stepper";
 import { IoIosArrowForward } from "react-icons/io";
 import ResumeOverview from "./ResumeOverview";
 import SkillPicker from "./SkillPicker";
+import PageHeader from "./PageHeader";
 
 const SkillsPage = () => {
-  const navigate = useNavigate();
-
   return (
     <motion.div
       className="p-8 h-screen"
@@ -19,23 +17,17 @@ const SkillsPage = () => {
     >
       <div className=" flex gap-4 h-fit items-start">
         <div className="w-full">
-          <button
-            onClick={() => navigate(-1)}
-            className="text-indigo-800 dark:text-indigo-600 font-semibold hover:underline mb-3 flex items-center gap-2 justify-center"
-          >
-            <FaArrowLeft /> Go Back
-          </button>
-          <h1 className="font-bold text-3xl dark:text-white mb-2">
-            Tell us about your skills
-          </h1>
-          <p className="text-lg text-neutral-600 dark:text-neutral-300">
-            Include details about your expertise, such as specific tools,
-            technologies, and relevant proficiencies.
-          </p>
+          <PageHeader
+            header="Tell us about your skills"
+            paragraph=" Include details about your expertise, such as specific tools,
+            technologies, and relevant proficiencies."
+          />
           <Stepper number={3} />
           <SkillPicker />
         </div>
-        <ResumeOverview />
+        <div className=" max-md:hidden">
+          <ResumeOverview />
+        </div>
       </div>
       <div className=" flex justify-end mt-8">
         <Link

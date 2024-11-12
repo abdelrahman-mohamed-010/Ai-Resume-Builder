@@ -76,10 +76,10 @@ const SkillPicker: React.FC = () => {
                 {skills.map((skill) => (
                   <motion.li
                     key={skill}
-                    className={` font-medium px-2 pb-1 border-2  tracking-wide text-white  rounded relative ${
+                    className={` font-medium px-2 pb-[2px] border-2  tracking-wide text-white rounded relative ${
                       isDeleteMode
-                        ? " cursor-pointer bg-red-900 border-red-900 "
-                        : "border-indigo-900 bg-indigo-900 dark:border-indigo-600 dark:bg-inherit"
+                        ? " cursor-pointer bg-red-900 border-red-900  "
+                        : "border-indigo-700 bg-indigo-700 border-2 dark:border-indigo-600 dark:bg-inherit dark:text-white"
                     }`}
                     layout
                     onClick={() => handleSkillClick(skill)}

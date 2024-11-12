@@ -1,13 +1,11 @@
-import { Link, useNavigate } from "react-router-dom";
-import { FaArrowLeft } from "react-icons/fa";
+import { Link } from "react-router-dom";
 import ResumeOverview from "./ResumeOverview";
 import ContactInfoForm from "./contactInfoForm";
 import { motion } from "framer-motion";
 import { IoIosArrowForward } from "react-icons/io";
+import PageHeader from "./PageHeader";
 
 const ContactInfo = () => {
-  const navigate = useNavigate();
-
   return (
     <motion.div
       className="p-8 min-h-screen"
@@ -18,18 +16,10 @@ const ContactInfo = () => {
     >
       <div className=" flex gap-4 h-fit items-end">
         <div className=" w-full">
-          <button
-            onClick={() => navigate(-1)}
-            className="text-indigo-800 dark:text-indigo-600 font-semibold hover:underline mb-3 flex items-center gap-2 justify-center"
-          >
-            <FaArrowLeft /> Go Back
-          </button>
-          <h1 className="font-bold dark:text-white text-3xl mb-2">
-            What’s the best way for employers to contact you?
-          </h1>
-          <p className=" text-lg text-neutral-600 dark:text-neutral-300">
-            We suggest including an email and phone number.
-          </p>
+          <PageHeader
+            header="What’s the best way for employers to contact you?"
+            paragraph="We suggest including an email and phone number."
+          />
           <ContactInfoForm />
         </div>
         <ResumeOverview />
