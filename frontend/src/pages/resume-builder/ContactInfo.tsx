@@ -1,9 +1,8 @@
-import { Link } from "react-router-dom";
 import ResumeOverview from "./ResumeOverview";
 import ContactInfoForm from "./contactInfoForm";
 import { motion } from "framer-motion";
-import { IoIosArrowForward } from "react-icons/io";
 import PageHeader from "./PageHeader";
+import NextBtn from "./NextBtn";
 
 const ContactInfo = () => {
   return (
@@ -25,12 +24,7 @@ const ContactInfo = () => {
         <ResumeOverview />
       </div>
       <div className=" flex justify-end  mt-8">
-        <Link
-          to={"/builder/experience"}
-          className=" bg-black px-5 py-3 text-lg rounded-full text-white font-semibold shadow-md transition-all duration-300 transform hover:scale-105 hover:shadow-lg flex items-center gap-1 text-nowrap dark:bg-accent dark:text-black "
-        >
-          Next : Work Exprience <IoIosArrowForward className=" mt-1" />
-        </Link>
+        <NextBtn NextTxt="Work Exprience" link="experience" />
       </div>
     </motion.div>
   );

@@ -1,12 +1,10 @@
-import { Link } from "react-router-dom";
 import ResumeOverview from "./ResumeOverview";
 import { motion } from "framer-motion";
-import { IoIosArrowForward } from "react-icons/io";
 import WorkExperienceForm from "./WorkExperienceForm";
 import PageHeader from "./PageHeader";
+import NextBtn from "./NextBtn";
 
 const ContactInfo = () => {
-
   return (
     <motion.div
       className="p-8 h-screen"
@@ -26,12 +24,7 @@ const ContactInfo = () => {
         </div>
         <div className="max-w-[360px] flex flex-col gap-6 items-end ">
           <ResumeOverview />
-          <Link
-            to={"/builder/RecreateExperience"}
-            className=" bg-black px-5 py-3 text-lg rounded-full text-white font-semibold shadow-md transition-all duration-300 transform hover:scale-105 hover:shadow-lg flex items-center gap-1 w-fit dark:bg-accent dark:text-black "
-          >
-            Next : Skills <IoIosArrowForward className=" mt-1" />
-          </Link>
+          <NextBtn NextTxt="Skills" link="RecreateExperience" />
         </div>
       </div>
     </motion.div>

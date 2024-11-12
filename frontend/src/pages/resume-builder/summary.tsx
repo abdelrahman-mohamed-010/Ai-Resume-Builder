@@ -1,11 +1,10 @@
-import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { IoIosArrowForward } from "react-icons/io";
 import { LiaBrainSolid } from "react-icons/lia";
 import { useState } from "react";
 import Stepper from "./Stepper";
 import ResumeOverview from "./ResumeOverview";
 import PageHeader from "./PageHeader";
+import NextBtn from "./NextBtn";
 
 const Summary = () => {
   const [customSummary, setCustomSummary] = useState<string>("");
@@ -100,13 +99,8 @@ const Summary = () => {
             )}
           </div>
           <div className=" flex justify-end flex-col items-end gap-8">
-            <ResumeOverview />{" "}
-            <Link
-              to={"/builder/education"}
-              className=" bg-black px-5 py-3 text-lg rounded-full text-white font-semibold shadow-md transition-all duration-300 transform hover:scale-105 hover:shadow-lg flex items-center gap-1 dark:bg-accent dark:text-black w-fit"
-            >
-              Next : Education <IoIosArrowForward className=" mt-1" />
-            </Link>
+            <ResumeOverview />
+            <NextBtn NextTxt="Education" link="education" />
           </div>
         </div>
       </div>
