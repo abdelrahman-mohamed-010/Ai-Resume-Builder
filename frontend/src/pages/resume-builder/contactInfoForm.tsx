@@ -1,6 +1,26 @@
+import React, { useState } from "react";
+import InputField from "./InputField";
 import Stepper from "./Stepper";
 
-const contactInfoForm = () => {
+const ContactInfoForm: React.FC = () => {
+  const [formData, setFormData] = useState({
+    firstName: "",
+    surname: "",
+    jobRole: "",
+    address: "",
+    postalCode: "",
+    phone: "",
+    email: "",
+  });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    setFormData((prevState) => ({
+      ...prevState,
+      [name]: value,
+    }));
+  };
+
   return (
     <>
       <Stepper number={1} />
@@ -9,136 +29,80 @@ const contactInfoForm = () => {
           * indicates a required field
         </div>
         <div className="flex gap-4 mt-4">
-          {/* Left Column */}
           <div className="flex flex-col gap-4 w-full">
-            {/* First Name */}
-            <div>
-              <label
-                htmlFor="firstName"
-                className="block text-neutral-700 mb-2 dark:text-neutral-300"
-              >
-                First Name
-              </label>
-              <input
-                type="text"
-                id="firstName"
-                name="firstName"
-                autoFocus
-                placeholder="e.g. Farid"
-                className="border border-neutral-400 rounded p-3 w-full focus:outline-none focus:ring-2 focus:ring-primary dark:bg-inherit dark:text-neutral-100 dark:border-neutral-600"
-                required
-              />
-            </div>
-
-            {/* Surname */}
-            <div>
-              <label
-                htmlFor="surname"
-                className="block text-neutral-700 mb-2 dark:text-neutral-300"
-              >
-                Surname
-              </label>
-              <input
-                type="text"
-                id="surname"
-                name="surname"
-                placeholder="e.g. Jhon"
-                className="border border-neutral-400 rounded p-3 w-full focus:outline-none focus:ring-2 focus:ring-primary dark:bg-inherit dark:text-neutral-100 dark:border-neutral-600"
-                required
-              />
-            </div>
-
-            {/* Job Role */}
-            <div>
-              <label
-                htmlFor="Job Role"
-                className="block text-neutral-700 mb-2 dark:text-neutral-300"
-              >
-                Job Role
-              </label>
-              <input
-                type="text"
-                id="Job Role"
-                name="Job Role"
-                placeholder="e.g., Software Engineer"
-                className="border border-neutral-400 rounded p-3 w-full focus:outline-none focus:ring-2 focus:ring-primary dark:bg-inherit dark:text-neutral-100 dark:border-neutral-600"
-              />
-            </div>
+            <InputField
+              label="First Name"
+              id="firstName"
+              name="firstName"
+              type="text"
+              placeholder="e.g. Farid"
+              required
+              value={formData.firstName}
+              onChange={handleChange}
+            />
+            <InputField
+              label="Surname"
+              id="surname"
+              name="surname"
+              type="text"
+              placeholder="e.g. Jhon"
+              required
+              value={formData.surname}
+              onChange={handleChange}
+            />
+            <InputField
+              label="Job Role"
+              id="jobRole"
+              name="jobRole"
+              type="text"
+              placeholder="e.g., Software Engineer"
+              value={formData.jobRole}
+              onChange={handleChange}
+            />
           </div>
-
-          {/* Right Column */}
           <div className="flex flex-col gap-4 w-full">
-            {/* Address */}
-            <div>
-              <label
-                htmlFor="adress"
-                className="block text-neutral-700 mb-2 dark:text-neutral-300"
-              >
-                Address
-              </label>
-              <input
-                type="text"
-                id="adress"
-                name="adress"
-                placeholder="e.g., 456 Elm Street"
-                className="border border-neutral-400 rounded p-3 w-full focus:outline-none focus:ring-2 focus:ring-primary dark:bg-inherit dark:text-neutral-100 dark:border-neutral-600"
-              />
-            </div>
-
-            {/* Postal Code and Phone (Side by Side) */}
+            <InputField
+              label="Address"
+              id="address"
+              name="address"
+              type="text"
+              placeholder="e.g., 456 Elm Street"
+              value={formData.address}
+              onChange={handleChange}
+            />
             <div className="flex gap-4">
-              {/* Postal Code */}
-              <div className="flex-1">
-                <label
-                  htmlFor="postalCode"
-                  className="block text-neutral-700 mb-2 dark:text-neutral-300"
-                >
-                  Postal Code
-                </label>
-                <input
-                  type="text"
-                  id="postalCode"
-                  name="postalCode"
-                  placeholder="e.g. 4057"
-                  className="border border-neutral-400 rounded p-3 w-full focus:outline-none focus:ring-2 focus:ring-primary dark:bg-inherit dark:text-neutral-100 dark:border-neutral-600"
-                />
-              </div>
-
-              {/* Phone */}
-              <div className="flex-1">
-                <label
-                  htmlFor="phone"
-                  className="block text-neutral-700 mb-2 dark:text-neutral-300"
-                >
-                  Phone
-                </label>
-                <input
-                  type="text"
-                  id="phone"
-                  name="phone"
-                  placeholder="e.g. +27 82 978 5313"
-                  className="border border-neutral-400 rounded p-3 w-full focus:outline-none focus:ring-2 focus:ring-primary dark:bg-inherit dark:text-neutral-100 dark:border-neutral-600"
-                />
-              </div>
-            </div>
-
-            {/* Email */}
-            <div>
-              <label
-                htmlFor="email"
-                className="block text-neutral-700 mb-2 dark:text-neutral-300"
-              >
-                Email
-              </label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                placeholder="Your email address"
-                className="border border-neutral-400 rounded p-3 w-full focus:outline-none focus:ring-2 focus:ring-primary dark:bg-inherit dark:text-neutral-100 dark:border-neutral-600"
-                required
+              <InputField
+                label="Postal Code"
+                id="postalCode"
+                name="postalCode"
+                type="text"
+                placeholder="e.g. 4057"
+                className="flex-1"
+                value={formData.postalCode}
+                onChange={handleChange}
+              />
+              <InputField
+                label="Phone"
+                id="phone"
+                name="phone"
+                type="text"
+                placeholder="e.g. +27 82 978 5313"
+                className="flex-1"
+                value={formData.phone}
+                onChange={handleChange}
               />
             </div>
+            <InputField
+              label="Email"
+              id="email"
+              name="email"
+              type="email"
+              placeholder="Your email address"
+              required
+              value={formData.email}
+              onChange={handleChange}
+              className="mb-4"
+            />
           </div>
         </div>
       </form>
@@ -146,4 +110,4 @@ const contactInfoForm = () => {
   );
 };
 
-export default contactInfoForm;
+export default ContactInfoForm;

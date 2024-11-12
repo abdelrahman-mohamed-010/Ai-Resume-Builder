@@ -8,7 +8,6 @@ import TitleSection from "./TitleSection";
 import Option from "./Option";
 import ToggleClose from "./ToggleClose";
 
-
 const Sidebar = () => {
   const [open, setOpen] = useState(true);
 
@@ -16,7 +15,7 @@ const Sidebar = () => {
     <motion.nav
       layout
       className={`sticky top-0 h-screen shrink-0 border-r border-slate-300 z-30 p-2 
-        bg-light-background dark:bg-dark-background`}
+        bg-light-background dark:bg-dark-background max-sm:hidden`}
       style={{
         width: open ? "225px" : "fit-content",
       }}

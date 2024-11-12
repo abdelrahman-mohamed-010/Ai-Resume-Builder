@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { FiChevronDown } from "react-icons/fi";
+import InputField from "./InputField";
 
 const AddEducation = () => {
   const [formType, setFormType] = useState<"education" | "certificate">(
@@ -37,19 +38,13 @@ const AddEducation = () => {
         <div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="mb-4">
-              <label
-                htmlFor="university"
-                className="block text-neutral-700 mb-2 dark:text-neutral-300"
-              >
-                University/Institute
-              </label>
-              <input
+              <InputField
+                label="University/Institute"
                 id="university"
                 name="university"
                 type="text"
-                autoFocus
-                className="border border-neutral-400 rounded p-3 w-full focus:outline-none focus:ring-2 focus:ring-primary dark:bg-inherit dark:text-neutral-100 dark:border-neutral-600"
                 placeholder="Enter your university or institute name"
+                autoFocus // Now this works correctly
               />
             </div>
             <div className="mb-4 relative">
@@ -80,32 +75,20 @@ const AddEducation = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="mb-4">
-              <label
-                htmlFor="course"
-                className="block text-neutral-700 mb-2 dark:text-neutral-300"
-              >
-                Course/Work
-              </label>
-              <input
+              <InputField
+                label="Course/Work"
                 id="course"
                 name="course"
                 type="text"
-                className="border border-neutral-400 rounded p-3 w-full focus:outline-none focus:ring-2 focus:ring-primary dark:bg-inherit dark:text-neutral-100 dark:border-neutral-600"
                 placeholder="Enter your course/work"
               />
             </div>
             <div className="mb-4">
-              <label
-                htmlFor="startDate"
-                className="block text-neutral-700 mb-2 dark:text-neutral-300"
-              >
-                Start Date
-              </label>
-              <input
+              <InputField
+                label="Start Date"
                 id="startDate"
                 name="startDate"
                 type="date"
-                className="border border-neutral-400 rounded p-3 w-full focus:outline-none focus:ring-2 focus:ring-primary dark:bg-inherit dark:text-neutral-100 dark:border-neutral-600"
               />
             </div>
           </div>
@@ -130,52 +113,35 @@ const AddEducation = () => {
           {/* Conditionally render End Date */}
           {!isCurrently && (
             <div className="mb-4">
-              <label
-                htmlFor="endDate"
-                className="block text-neutral-700 mb-2 dark:text-neutral-300"
-              >
-                End Date
-              </label>
-              <input
+              <InputField
+                label="End Date"
                 id="endDate"
                 name="endDate"
                 type="date"
-                className="border border-neutral-400 rounded p-3 w-full focus:outline-none focus:ring-2 focus:ring-primary dark:bg-inherit dark:text-neutral-100 dark:border-neutral-600"
               />
             </div>
           )}
         </div>
       )}
+
       {/* Certificate Form */}
       {formType === "certificate" && (
         <div>
           <div className="mb-4">
-            <label
-              htmlFor="certificateTitle"
-              className="block text-neutral-700 mb-2 dark:text-neutral-300"
-            >
-              Certificate Title
-            </label>
-            <input
+            <InputField
+              label="Certificate Title"
               id="certificateTitle"
               name="certificateTitle"
               type="text"
-              className="border border-neutral-400 rounded p-3 w-full focus:outline-none focus:ring-2 focus:ring-primary dark:bg-inherit dark:text-neutral-100 dark:border-neutral-600"
               placeholder="Enter certificate title"
             />
           </div>
           <div className="mb-4">
-            <label
-              htmlFor="issuer"
-              className="block text-neutral-700 mb-2 dark:text-neutral-300"
-            >
-              Issuer
-            </label>
-            <input
+            <InputField
+              label="Issuer"
               id="issuer"
               name="issuer"
               type="text"
-              className="border border-neutral-400 rounded p-3 w-full focus:outline-none focus:ring-2 focus:ring-primary dark:bg-inherit dark:text-neutral-100 dark:border-neutral-600"
               placeholder="Enter issuer name"
             />
           </div>

@@ -51,7 +51,7 @@ const Summary = () => {
             <Stepper number={4} />
             {/* Custom Summary Input and AI-Generated Section */}
             <textarea
-              className="w-full p-2 mt-8 mb-3 rounded-md border border-neutral-300  h-[247px] dark:bg-inherit dark:border-neutral-700 dark:text-white"
+              className="border border-neutral-400 rounded p-2 mt-8 mb-3 w-full h-[247px] focus:outline-none focus:ring-2 focus:ring-primary dark:bg-inherit dark:text-neutral-100 dark:border-neutral-600"
               placeholder="Write your own summary here..."
               autoFocus
               value={customSummary}
