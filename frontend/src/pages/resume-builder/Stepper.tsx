@@ -6,10 +6,10 @@ import { MdDashboardCustomize } from "react-icons/md";
 const Stepper = ({ number: stepNumber = 2 }) => {
   const steps = [
     { label: "Contacts", icon: <FaAddressBook /> },
-    { label: "Experience", icon: <FaBriefcase /> },
-    { label: "Skills", icon: <FaCogs /> },
     { label: "Summary", icon: <PiPaperclipThin /> },
+    { label: "Experience", icon: <FaBriefcase /> },
     { label: "Education", icon: <IoMdSchool /> },
+    { label: "Skills", icon: <FaCogs /> },
     { label: "custom", icon: <MdDashboardCustomize /> },
   ];
 

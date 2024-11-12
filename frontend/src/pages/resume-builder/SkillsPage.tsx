@@ -29,7 +29,7 @@ const SkillsPage = () => {
         </div>
       </div>
       <div className=" flex justify-end mt-8">
-        <NextBtn NextTxt="Summary" link="summary" />
+        <NextBtn NextTxt="Custom" link="custom" />
       </div>
     </motion.div>
   );

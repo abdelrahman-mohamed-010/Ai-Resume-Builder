@@ -26,7 +26,7 @@ const ContactInfo = () => {
         </div>
       </div>
       <div className=" flex justify-end  mt-4">
-        <NextBtn NextTxt="Work Exprience" link="experience" />
+        <NextBtn NextTxt="Summary" link="summary" />
       </div>
     </motion.div>
   );

@@ -17,6 +17,7 @@ import Eeducation from "./pages/resume-builder/Eeducation.tsx";
 import Summary from "./pages/resume-builder/Summary.tsx";
 import Custom from "./pages/resume-builder/Custom.tsx";
 import RecreateCustom from "./pages/resume-builder/RecreateCustom.tsx";
+import RecreateEducation from "./pages/resume-builder/RecreateEducation.tsx";
 
 const router = createBrowserRouter([
   {
@@ -57,6 +58,10 @@ const router = createBrowserRouter([
           {
             path: "education",
             element: <Eeducation />,
+          },
+          {
+            path: "RecreateEducation",
+            element: <RecreateEducation />,
           },
           {
             path: "custom",

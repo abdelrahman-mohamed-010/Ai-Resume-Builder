@@ -5,7 +5,7 @@ const RecreateExp = () => {
     <RecreatePage
       title="Your experience has been added seamlessly."
       btn="Add Another Experience"
-      skipLink="/builder/skills"
+      skipLink="/builder/education"
       next="/builder/experience"
     />
   );
