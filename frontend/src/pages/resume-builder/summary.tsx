@@ -97,7 +97,7 @@ const Summary = () => {
           </div>
           <div className=" flex justify-end flex-col items-end gap-8">
             <ResumeOverview />
-            <NextBtn NextTxt="Work Exprience" link="experience" />
+            <NextBtn NextTxt="Work Exprience" id={"summary-form"} />
           </div>
         </div>
       </div>

@@ -1,9 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
 import coverLetterReducer from "./coverLetterSlice";
+import resumeReducer from "./ResumeSlice";
 
 const store = configureStore({
   reducer: {
     coverLetter: coverLetterReducer,
+    Resume: resumeReducer,
   },
 });
 

@@ -5,6 +5,7 @@ import PageHeader from "./PageHeader";
 import NextBtn from "./NextBtn";
 
 const ContactInfo = () => {
+
   return (
     <motion.div
       className="p-8 min-h-screen"
@@ -26,7 +27,7 @@ const ContactInfo = () => {
         </div>
       </div>
       <div className=" flex justify-end  mt-4">
-        <NextBtn NextTxt="Summary" link="summary" />
+        <NextBtn NextTxt="Summary" id={"contact-form"} />
       </div>
     </motion.div>
   );

@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import InputField from "./InputField";
 import Stepper from "./Stepper";
+import { useAppDispatch} from "../../hooks/reduxHooks";
+import { updatePersonalInfo } from "@/redux/ResumeSlice";
+import { useNavigate } from "react-router-dom";
 
 const ContactInfoForm: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -13,6 +16,10 @@ const ContactInfoForm: React.FC = () => {
     email: "",
   });
 
+  const navigate = useNavigate();
+
+  const dispatch = useAppDispatch();
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setFormData((prevState) => ({
@@ -21,10 +28,26 @@ const ContactInfoForm: React.FC = () => {
     }));
   };
 
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    dispatch(
+      updatePersonalInfo({
+        firstname: formData.firstName,
+        surname: formData.surname,
+        address: formData.address,
+        postalcode: formData.postalCode,
+        phone: formData.phone,
+        contactJobRole: formData.jobRole,
+        email: formData.email,
+      })
+    );
+    navigate("/builder/summary")
+  };
+
   return (
     <>
       <Stepper number={1} />
-      <form className="">
+      <form className="" id="contact-form" onSubmit={handleSubmit}>
         <div className="text-sm mt-6 font-semibold text-neutral-600 dark:text-neutral-200">
           * indicates a required field
         </div>
@@ -55,6 +78,7 @@ const ContactInfoForm: React.FC = () => {
               id="jobRole"
               name="jobRole"
               type="text"
+              required
               placeholder="e.g., Software Engineer"
               value={formData.jobRole}
               onChange={handleChange}
@@ -66,6 +90,7 @@ const ContactInfoForm: React.FC = () => {
               id="address"
               name="address"
               type="text"
+              required
               placeholder="e.g., 456 Elm Street"
               value={formData.address}
               onChange={handleChange}
@@ -76,6 +101,7 @@ const ContactInfoForm: React.FC = () => {
                 id="postalCode"
                 name="postalCode"
                 type="text"
+                required
                 placeholder="e.g. 4057"
                 className="flex-1"
                 value={formData.postalCode}
@@ -86,6 +112,7 @@ const ContactInfoForm: React.FC = () => {
                 id="phone"
                 name="phone"
                 type="text"
+                required
                 placeholder="e.g. +27 82 978 5313"
                 className="flex-1"
                 value={formData.phone}

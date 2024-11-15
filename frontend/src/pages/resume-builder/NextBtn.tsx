@@ -1,19 +1,19 @@
 import { IoIosArrowForward } from "react-icons/io";
-import { Link } from "react-router-dom";
 
 interface NextBtnProps {
-  link: string;
   NextTxt: string;
+  id: string;
 }
 
-const NextBtn: React.FC<NextBtnProps> = ({ link, NextTxt }) => {
+const NextBtn: React.FC<NextBtnProps> = ({ NextTxt, id }) => {
   return (
-    <Link
-      to={`/builder/${link}`}
+    <button
+      form={id}
+      type="submit"
       className=" bg-black px-5 py-3 text-lg rounded-full text-white font-semibold shadow-md transition-all duration-300 transform hover:scale-105 hover:shadow-lg flex items-center gap-1 text-nowrap dark:bg-accent dark:text-black "
     >
       Next : {NextTxt} <IoIosArrowForward className=" mt-1" />
-    </Link>
+    </button>
   );
 };
 
