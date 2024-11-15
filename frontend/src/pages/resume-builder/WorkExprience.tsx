@@ -24,7 +24,7 @@ const ContactInfo = () => {
         </div>
         <div className="max-w-[360px] flex flex-col gap-6 items-end ">
           <ResumeOverview />
-          <NextBtn NextTxt="education" link="RecreateExperience" />
+          <NextBtn NextTxt="education" id="ex-form" />
         </div>
       </div>
     </motion.div>

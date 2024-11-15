@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import InputField from "./InputField";
 import Stepper from "./Stepper";
-import { useAppDispatch} from "../../hooks/reduxHooks";
+import { useAppDispatch } from "../../hooks/reduxHooks";
 import { updatePersonalInfo } from "@/redux/ResumeSlice";
 import { useNavigate } from "react-router-dom";
 
@@ -41,7 +41,7 @@ const ContactInfoForm: React.FC = () => {
         email: formData.email,
       })
     );
-    navigate("/builder/summary")
+    navigate("/builder/summary");
   };
 
   return (

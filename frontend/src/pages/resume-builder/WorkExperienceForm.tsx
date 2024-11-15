@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import { LiaBrainSolid } from "react-icons/lia";
 import Stepper from "./Stepper";
 import InputField from "./InputField";
+import { useAppDispatch } from "../../hooks/reduxHooks";
+import { useNavigate } from "react-router-dom";
+import { addExperience } from "@/redux/ResumeSlice";
 
 const WorkExperienceForm = () => {
   const [formData, setFormData] = useState({
@@ -11,7 +14,12 @@ const WorkExperienceForm = () => {
     startDate: "",
     endDate: "",
     currentlyWorking: false,
+    jobResponsibilities: "",
   });
+
+  const navigate = useNavigate();
+
+  const dispatch = useAppDispatch();
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -32,12 +40,26 @@ const WorkExperienceForm = () => {
     }
   };
 
-  console.log(formData);
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    dispatch(
+      addExperience({
+        jobTitle: formData.jobTitle,
+        employer: formData.employer,
+        jobResponsibilities: formData.jobResponsibilities,
+        country: formData.country,
+        startDate: formData.startDate,
+        endDate: formData.currentlyWorking ? "Present" : formData.endDate,
+      })
+    );
+    navigate("/builder/education");
+  };
 
   return (
     <>
       <Stepper number={3} />
-      <form>
+      <form id="ex-form" onSubmit={handleSubmit}>
         <div className="text-sm mt-6 font-semibold text-neutral-600 dark:text-neutral-300">
           * indicates a required field
         </div>
@@ -49,7 +71,9 @@ const WorkExperienceForm = () => {
               type="text"
               id="jobTitle"
               name="jobTitle"
+              autoFocus
               placeholder="e.g., Software Engineer"
+              required
               value={formData.jobTitle}
               onChange={handleChange}
             />
@@ -58,6 +82,7 @@ const WorkExperienceForm = () => {
               id="employer"
               name="employer"
               placeholder="e.g., Google"
+              required
               value={formData.employer}
               onChange={handleChange}
               type={"text"}
@@ -71,9 +96,12 @@ const WorkExperienceForm = () => {
               </label>
               <textarea
                 rows={5}
-                name="Responsibilities"
+                name="jobResponsibilities"
+                required
                 id="Responsibilities"
                 className="border border-neutral-400 rounded p-3 w-full focus:outline-none focus:ring-2 focus:ring-primary dark:bg-inherit dark:text-neutral-100 dark:border-neutral-600"
+                value={formData.jobResponsibilities}
+                onChange={handleChange}
               ></textarea>
               <button
                 type="button"
@@ -89,6 +117,7 @@ const WorkExperienceForm = () => {
             <InputField
               label="Country"
               type="text"
+              required
               id="country"
               name="country"
               placeholder="e.g., USA"
@@ -101,6 +130,7 @@ const WorkExperienceForm = () => {
                 id="startDate"
                 name="startDate"
                 className="w-full"
+                required
                 type="date"
                 value={formData.startDate}
                 onChange={handleChange}
@@ -111,6 +141,7 @@ const WorkExperienceForm = () => {
                   id="endDate"
                   className="w-full"
                   name="endDate"
+                  required
                   type="date"
                   value={formData.endDate}
                   onChange={handleChange}
