@@ -74,7 +74,7 @@ const resumeSlice = createSlice({
     addCustom: (state, action: PayloadAction<Custom>) => {
       state.customs.push(action.payload);
     },
-    removeCustomById: (state, action: PayloadAction<string>) => {
+    removeCustomById: (state, action: PayloadAction<number>) => {
       state.customs = state.customs.filter(
         (custom) => custom.id !== action.payload
       );

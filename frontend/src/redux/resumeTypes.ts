@@ -28,7 +28,7 @@ export interface Skill {
 
 export interface Custom {
   custom: string;
-  id: string;
+  id: number;
 }
 
 export interface PersonalInfo {
