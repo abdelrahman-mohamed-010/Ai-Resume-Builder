@@ -2,17 +2,31 @@ import React, { useState } from "react";
 import { VscEdit } from "react-icons/vsc";
 import { IoMdClose } from "react-icons/io";
 import { motion, stagger, useAnimate } from "framer-motion";
+import { useNavigate } from "react-router-dom";
+import { useAppDispatch } from "@/hooks/reduxHooks";
+import { setSkills } from "@/redux/ResumeSlice";
 
 const SkillPicker: React.FC = () => {
-  const [skills, setSkills] = useState<string[]>([]);
+  const [internalSkills, setInternalSkills] = useState<
+    { skill: string; id: string }[]
+  >([]);
   const [newSkill, setNewSkill] = useState<string>("");
   const [isDeleteMode, setIsDeleteMode] = useState<boolean>(false);
 
   const [scope, animate] = useAnimate();
+  const navigate = useNavigate();
+  const dispatch = useAppDispatch();
 
   const addSkill = () => {
-    if (newSkill.trim() && !skills.includes(newSkill.trim())) {
-      setSkills([...skills, newSkill.trim()]);
+    if (
+      newSkill.trim() &&
+      !internalSkills.some((s) => s.skill === newSkill.trim())
+    ) {
+      const newSkillObject = {
+        skill: newSkill.trim(),
+        id: Math.random().toString(36).substr(2, 9),
+      };
+      setInternalSkills([...internalSkills, newSkillObject]);
       setNewSkill("");
     }
   };
@@ -25,7 +39,7 @@ const SkillPicker: React.FC = () => {
   };
 
   const handleEditBtn = () => {
-    if (skills.length > 0) {
+    if (internalSkills.length > 0) {
       setIsDeleteMode(!isDeleteMode);
     } else {
       animate(
@@ -36,13 +50,19 @@ const SkillPicker: React.FC = () => {
     }
   };
 
-  const handleSkillClick = (skill: string) => {
+  const handleSkillClick = (id: string) => {
     if (isDeleteMode) {
-      setSkills((prevSkills) => prevSkills.filter((s) => s !== skill));
+      setInternalSkills((prevSkills) => prevSkills.filter((s) => s.id !== id));
     }
-    if (skills.length == 1) {
+    if (internalSkills.length == 1) {
       setIsDeleteMode(false);
     }
+  };
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    dispatch(setSkills(internalSkills));
+    navigate("/builder/custom");
   };
 
   return (
@@ -51,16 +71,17 @@ const SkillPicker: React.FC = () => {
         Pick Your Skills
       </h2>
       <div className="flex items-center gap-2 mb-4">
-        <input
-          type="text"
-          value={newSkill}
-          onChange={(e) => setNewSkill(e.target.value)}
-          onKeyDown={handleKeyDown}
-          placeholder="Enter a skill"
-          className="border border-gray-300 px-3 py-3 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-primary dark:bg-inherit dark:text-neutral-100 dark:border-neutral-600 "
-        />
+        <form className=" w-full" id="skills-form" onSubmit={handleSubmit}>
+          <input
+            type="text"
+            value={newSkill}
+            onChange={(e) => setNewSkill(e.target.value)}
+            onKeyDown={handleKeyDown}
+            placeholder="Enter a skill"
+            className="border border-gray-300 px-3 py-3 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-primary dark:bg-inherit dark:text-neutral-100 dark:border-neutral-600 "
+          />
+        </form>
       </div>
-
       <div className="mt-4">
         <div className="w-full flex justify-between items-start gap-6">
           <div ref={scope}>
@@ -71,18 +92,18 @@ const SkillPicker: React.FC = () => {
             >
               {isDeleteMode ? "Select To Delete" : "Selected Skills:"}
             </h3>
-            {skills.length > 0 ? (
+            {internalSkills.length > 0 ? (
               <ul className="list-none mt-2 flex gap-2 flex-wrap">
-                {skills.map((skill) => (
+                {internalSkills.map(({ skill, id }) => (
                   <motion.li
-                    key={skill}
-                    className={` font-medium px-2 pb-[2px] border-2  tracking-wide text-white rounded relative ${
+                    key={id}
+                    className={`font-medium px-2 pb-[2px] border-2 tracking-wide text-white rounded relative ${
                       isDeleteMode
-                        ? " cursor-pointer bg-red-900 border-red-900  "
+                        ? "cursor-pointer bg-red-900 border-red-900"
                         : "border-indigo-700 bg-indigo-700 border-2 dark:border-indigo-600 dark:bg-inherit dark:text-white"
                     }`}
                     layout
-                    onClick={() => handleSkillClick(skill)}
+                    onClick={() => handleSkillClick(id)}
                   >
                     {skill}
                   </motion.li>
