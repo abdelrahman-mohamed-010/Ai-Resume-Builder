@@ -42,7 +42,6 @@ const WorkExperienceForm = () => {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-
     dispatch(
       addExperience({
         jobTitle: formData.jobTitle,
@@ -53,7 +52,7 @@ const WorkExperienceForm = () => {
         endDate: formData.currentlyWorking ? "Present" : formData.endDate,
       })
     );
-    navigate("/builder/education");
+    navigate("/builder/RecreateExperience");
   };
 
   return (

@@ -27,7 +27,7 @@ const Eeducation = () => {
           </div>
           <div className=" flex justify-end flex-col items-end gap-7 mt-4">
             <ResumeOverview />
-            <NextBtn NextTxt="Skills" link="RecreateEducation" />
+            <NextBtn NextTxt="Skills" id="education-form" />
           </div>
         </div>
       </div>

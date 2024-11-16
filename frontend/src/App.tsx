@@ -14,10 +14,10 @@ import SignUpPage from "./pages/SignUpPage.tsx";
 import Skills from "./pages/resume-builder/SkillsPage.tsx";
 import RecreateExp from "./pages/resume-builder/RecreateExp.tsx";
 import Eeducation from "./pages/resume-builder/Eeducation.tsx";
-import Summary from "./pages/resume-builder/Summary.tsx";
 import Custom from "./pages/resume-builder/Custom.tsx";
 import RecreateCustom from "./pages/resume-builder/RecreateCustom.tsx";
 import RecreateEducation from "./pages/resume-builder/RecreateEducation.tsx";
+import Summary from "./pages/resume-builder/summary.tsx";
 
 const router = createBrowserRouter([
   {
