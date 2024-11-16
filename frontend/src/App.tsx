@@ -18,6 +18,7 @@ import Custom from "./pages/resume-builder/Custom.tsx";
 import RecreateCustom from "./pages/resume-builder/RecreateCustom.tsx";
 import RecreateEducation from "./pages/resume-builder/RecreateEducation.tsx";
 import Summary from "./pages/resume-builder/summary.tsx";
+import ResumePreview from "./pages/resume-builder/ResumePreview.tsx";
 
 const router = createBrowserRouter([
   {
@@ -70,6 +71,10 @@ const router = createBrowserRouter([
           {
             path: "RecreateCustom",
             element: <RecreateCustom />,
+          },
+          {
+            path: "Preview",
+            element: <ResumePreview />,
           },
         ],
       },

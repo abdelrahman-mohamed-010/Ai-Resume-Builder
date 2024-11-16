@@ -1,6 +1,12 @@
-const ResumeShowCase: React.FC = () => {
+interface ResumeShowCaseProps {
+  className?: string;
+}
+
+const ResumeShowCase: React.FC<ResumeShowCaseProps> = ({ className }) => {
   return (
-    <div className=" max-w-4xl mx-auto px-8 py-4 bg-white shadow-lg rounded-lg text-gray-800">
+    <div
+      className={`bg-white text-gray-800 ${className} `}
+    >
       {/* Header */}
       <div className=" mb-8">
         <h1 className="text-3xl font-bold">Alexander James Smith</h1>
@@ -46,7 +52,7 @@ const ResumeShowCase: React.FC = () => {
           ].map((skill) => (
             <span
               key={skill}
-              className="px-3 py-1 bg-gray-200 rounded-full text-sm text-gray-800"
+              className="px-3 py-1 bg-gray-200 rounded text-sm text-gray-800"
             >
               {skill}
             </span>
