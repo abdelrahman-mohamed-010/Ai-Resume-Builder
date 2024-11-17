@@ -1,36 +1,40 @@
 import { LiaBrainSolid } from "react-icons/lia";
 import { useState } from "react";
-import { motion } from "framer-motion";
-import { useAppDispatch } from "../../hooks/reduxHooks";
+import { useAppDispatch, useAppSelector } from "../../hooks/reduxHooks";
 import { updateSummary } from "@/redux/ResumeSlice";
 import { useNavigate } from "react-router-dom";
+import { GoogleGenerativeAI } from "@google/generative-ai";
+import { useQuery } from "@tanstack/react-query";
 
 const SummaryTextArea = () => {
   const [customSummary, setCustomSummary] = useState<string>("");
-  const [aiGeneratedSummaries, setAiGeneratedSummaries] = useState<string[]>(
-    []
+
+  const genAI = new GoogleGenerativeAI(import.meta.env.VITE_GOOOGLE_AI_API_KEY);
+  const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+  const JobTitle = useAppSelector(
+    (state) => state.Resume.personalInfo.contactJobRole
   );
 
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
 
-  const handleAddAISummary = (summary: string) => {
-    setCustomSummary(summary);
+  const fetchAISummary = async (): Promise<string> => {
+    const prompt = `Job Title: ${JobTitle}. Based on the job title, give me a summary for my resume within 4-5 lines.`;
+    const result = await model.generateContent(prompt);
+    return result.response.text();
   };
 
-  const handleGenerateAISummaries = () => {
-    const newSummaries = [
-      "Passionate full-stack developer with extensive experience in building, maintaining, and optimizing web applications. Proficient in both frontend and backend development, with a commitment to delivering scalable, user-friendly solutions that enhance the digital experience.",
-      "Highly skilled in React and TypeScript, with a strong focus on creating scalable and maintainable frontend architectures. Experienced in building complex, responsive applications that prioritize performance, user experience, and modern web standards.",
-      "Innovative problem solver with a proven track record of enhancing web application efficiency and performance. Adept at analyzing requirements and implementing strategic solutions that address core challenges while improving overall functionality and usability.",
-    ];
+  const { refetch, isFetching } = useQuery({
+    queryKey: ["generateSummary"],
+    queryFn: fetchAISummary,
+    enabled: false,
+  });
 
-    setAiGeneratedSummaries(newSummaries);
-  };
-  const summaryVariants = {
-    initial: { opacity: 0, y: 20 },
-    animate: { opacity: 1, y: 0 },
-    exit: { opacity: 0, y: 20 },
+  const handleGenerateAISummaries = async () => {
+    const result = await refetch();
+    if (result.isSuccess && result.data) {
+      setCustomSummary(result.data);
+    }
   };
 
   const handleSaveSummary = (e: React.FormEvent<HTMLFormElement>) => {
@@ -55,42 +59,22 @@ const SummaryTextArea = () => {
       <button
         type="button"
         onClick={handleGenerateAISummaries}
-        className="bg-primary hover:bg-indigo-800 transition-all rounded-lg px-4 py-2 w-full sm:w-fit font-semibold text-white flex gap-2 items-center justify-center"
+        className={`bg-primary hover:bg-indigo-800 transition-all rounded-lg px-4 py-2 w-full sm:w-fit font-semibold text-white flex gap-2 items-center justify-center ${
+          isFetching ? "disabled:cursor-not-allowed" : ""
+        }`}
+        disabled={isFetching}
       >
-        <LiaBrainSolid className="w-6 h-6" /> Generate From AI
+        {isFetching ? (
+          <>
+            <span className="w-5 h-5 border-2 border-t-transparent animate-spin rounded-full mr-2"></span>
+            Processing...
+          </>
+        ) : (
+          <>
+            <LiaBrainSolid className="w-6 h-6" /> Generate From AI
+          </>
+        )}
       </button>
-      {/* Display AI-Generated Summaries with Staggered Animation */}
-      {aiGeneratedSummaries.length > 0 && (
-        <>
-          <h3 className="font-semibold text-lg mt-6 mb-3 dark:text-white">
-            AI-Generated Suggestions
-          </h3>
-          <motion.div
-            className="space-y-4"
-            initial="initial"
-            animate="animate"
-            exit="exit"
-            variants={{
-              animate: { transition: { staggerChildren: 0.3 } },
-            }}
-          >
-            {aiGeneratedSummaries.map((summary, index) => (
-              <motion.div
-                key={index}
-                className="p-3 flex justify-between items-start"
-                variants={summaryVariants}
-              >
-                <p
-                  className="text-neutral-700 dark:text-neutral-300 flex-1 mr-3 hover:scale-105 transition-all cursor-pointer"
-                  onClick={() => handleAddAISummary(summary)}
-                >
-                  {summary}
-                </p>
-              </motion.div>
-            ))}
-          </motion.div>
-        </>
-      )}
     </>
   );
 };
