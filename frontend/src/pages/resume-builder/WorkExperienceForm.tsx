@@ -2,9 +2,11 @@ import React, { useState } from "react";
 import { LiaBrainSolid } from "react-icons/lia";
 import Stepper from "./Stepper";
 import InputField from "./InputField";
-import { useAppDispatch } from "../../hooks/reduxHooks";
+import { useAppDispatch, useAppSelector } from "../../hooks/reduxHooks";
 import { useNavigate } from "react-router-dom";
 import { addExperience } from "@/redux/ResumeSlice";
+import { GoogleGenerativeAI } from "@google/generative-ai";
+import { useQuery } from "@tanstack/react-query";
 
 const WorkExperienceForm = () => {
   const [formData, setFormData] = useState({
@@ -20,6 +22,35 @@ const WorkExperienceForm = () => {
   const navigate = useNavigate();
 
   const dispatch = useAppDispatch();
+  const genAI = new GoogleGenerativeAI(import.meta.env.VITE_GOOOGLE_AI_API_KEY);
+  const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+  const Title = useAppSelector(
+    (state) => state.Resume.personalInfo.contactJobRole
+  );
+
+  const fetchAISummary = async (): Promise<string> => {
+    const prompt = `Job Title: ${
+      formData.jobTitle !== "" ? formData.jobTitle : Title
+    }. Based on the job title, give me a jobResponsibilities for my resume within 4-5 things and if given jobTitle unknowen say enter known Title or any msg.`;
+    const result = await model.generateContent(prompt);
+    return result.response.text();
+  };
+
+  const { refetch, isFetching } = useQuery({
+    queryKey: ["generateSummary"],
+    queryFn: fetchAISummary,
+    enabled: false,
+  });
+
+  const handleGenerateAIEx = async () => {
+    const result = await refetch();
+    if (result.isSuccess && result.data) {
+      setFormData((prevData) => ({
+        ...prevData,
+        jobResponsibilities: result.data,
+      }));
+    }
+  };
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -104,9 +135,22 @@ const WorkExperienceForm = () => {
               ></textarea>
               <button
                 type="button"
-                className="bg-primary hover:bg-indigo-800 transition-all rounded-lg px-5 py-3 w-fit font-semibold text-white flex gap-2 items-center mt-2"
+                onClick={handleGenerateAIEx}
+                className={`bg-primary hover:bg-indigo-800 transition-all rounded-lg px-4 py-2 w-full sm:w-fit font-semibold text-white flex gap-2 items-center justify-center ${
+                  isFetching ? "disabled:cursor-not-allowed" : ""
+                }`}
+                disabled={isFetching}
               >
-                <LiaBrainSolid className="w-6 h-6" /> Generate From AI
+                {isFetching ? (
+                  <>
+                    <span className="w-5 h-5 border-2 border-t-transparent animate-spin rounded-full mr-2"></span>
+                    Processing...
+                  </>
+                ) : (
+                  <>
+                    <LiaBrainSolid className="w-6 h-6" /> Generate From AI
+                  </>
+                )}
               </button>
             </div>
           </div>
