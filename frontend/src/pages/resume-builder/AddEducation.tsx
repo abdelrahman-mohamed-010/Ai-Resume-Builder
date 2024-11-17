@@ -11,7 +11,7 @@ const AddEducation = () => {
     isCurrently: true,
     university: "",
     degreeType: "diploma",
-    course: "",
+    fieldOfStudy: "",
     startDate: "",
     endDate: "",
     certificateTitle: "",
@@ -34,7 +34,7 @@ const AddEducation = () => {
         : {
             university: "",
             degreeType: "",
-            course: "",
+            fieldOfStudy: "",
             startDate: "",
             endDate: "",
           }),
@@ -70,7 +70,7 @@ const AddEducation = () => {
       dispatch(
         addEducation({
           university: formData.university,
-          courses: formData.course,
+          fieldOfStudy: formData.fieldOfStudy,
           degree: formData.degreeType,
           startDate: formData.startDate,
           endDate: formData.endDate,
@@ -151,7 +151,7 @@ const AddEducation = () => {
                     <option value="bs">BS</option>
                     <option value="ms">MS</option>
                     <option value="phd">PhD</option>
-                    <option value="course">Course</option>
+                    <option value="fieldOfStudy">fieldOfStudy</option>
                   </select>
                   <span className="absolute inset-y-0 right-3 flex items-center pointer-events-none">
                     <FiChevronDown className="text-gray-500 dark:text-white" />
@@ -163,12 +163,12 @@ const AddEducation = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="mb-4">
                 <InputField
-                  label="Course/Work"
-                  id="course"
-                  name="course"
+                  label="Field of Study"
+                  id="fieldOfStudy"
+                  name="fieldOfStudy"
                   type="text"
-                  placeholder="Enter your course/work"
-                  value={formData.course}
+                  placeholder="Enter your Field of Study"
+                  value={formData.fieldOfStudy}
                   onChange={handleInputChange}
                   required
                 />

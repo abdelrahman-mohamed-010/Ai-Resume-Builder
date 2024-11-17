@@ -9,13 +9,13 @@ export interface Experience {
 
 export interface Education {
   university: string;
-  courses: string;
+  fieldOfStudy: string;
   degree: string;
   startDate: string;
   endDate: string;
   present: boolean;
 }
-
+// fieldOfStudy: string;
 export interface Certification {
   title: string;
   issuer: string;

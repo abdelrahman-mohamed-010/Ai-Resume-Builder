@@ -1,19 +1,31 @@
 import { FiChevronDown } from "react-icons/fi";
 import { useAppDispatch, useAppSelector } from "../../hooks/reduxHooks";
 import { updateFontSize, updateFontStyle } from "../../redux/coverLetterSlice";
+import {
+  updateFontSize as updateResumeFontStyle,
+  updateFontStyle as updateRsumeFontStyle,
+} from "../../redux/ResumeSlice";
 
-const FontOptions = () => {
+const FontOptions: React.FC<{ type: string }> = ({ type }) => {
   const dispatch = useAppDispatch();
 
   const fontStyle = useAppSelector((state) => state.coverLetter.fontStyle);
   const fontSize = useAppSelector((state) => state.coverLetter.fontSize);
 
   const handleFontStyleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    dispatch(updateFontStyle(e.target.value));
+    if (type === "Cover Letter") {
+      dispatch(updateFontStyle(e.target.value));
+    } else {
+      dispatch(updateRsumeFontStyle(e.target.value));
+    }
   };
 
   const handleFontSizeChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    dispatch(updateFontSize(e.target.value));
+    if (type === "Cover Letter") {
+      dispatch(updateFontSize(e.target.value));
+    } else {
+      dispatch(updateResumeFontStyle(e.target.value));
+    }
   };
 
   return (

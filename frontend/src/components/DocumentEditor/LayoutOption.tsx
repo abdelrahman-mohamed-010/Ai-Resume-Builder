@@ -1,13 +1,18 @@
 import { useAppDispatch, useAppSelector } from "../../hooks/reduxHooks";
 import { updateLayout } from "../../redux/coverLetterSlice";
+import { updateLayout as resumeLayout } from "../../redux/ResumeSlice";
 
-const LayoutOption = () => {
+const LayoutOption: React.FC<{ type: string }> = ({ type }) => {
   const dispatch = useAppDispatch();
 
   const layoutStyle = useAppSelector((state) => state.coverLetter.layout);
 
   const handleLayoutStyle = (layout: string) => {
-    dispatch(updateLayout(layout));
+    if (type === "Cover Letter") {
+      dispatch(updateLayout(layout));
+    } else {
+      dispatch(resumeLayout(layout));
+    }
   };
 
   return (

@@ -21,7 +21,7 @@ const DocumentEditor: React.FC<DocumentEditorProps> = ({ type }) => {
         Ready to take the next step?
       </p>
       <ExportOptions type={type} />
-      <FormattingOptions />
+      <FormattingOptions type={type} />
     </motion.section>
   );
 };

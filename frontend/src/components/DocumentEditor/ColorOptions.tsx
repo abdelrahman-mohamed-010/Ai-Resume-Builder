@@ -2,8 +2,9 @@ import { CiNoWaitingSign } from "react-icons/ci";
 import { FaCheck } from "react-icons/fa";
 import { useAppDispatch, useAppSelector } from "../../hooks/reduxHooks";
 import { updateColor } from "../../redux/coverLetterSlice";
+import { updateColor as updateResumeColor } from "../../redux/ResumeSlice";
 
-const ColorOptions = () => {
+const ColorOptions: React.FC<{ type: string }> = ({ type }) => {
   const colors = [
     "", // No color (default)
     "#4B0082", // Indigo
@@ -21,7 +22,11 @@ const ColorOptions = () => {
   const colorStyle = useAppSelector((state) => state.coverLetter.color);
 
   const handleUpdateColorStyle = (color: string) => {
-    dispatch(updateColor(color));
+    if (type === "Cover Letter") {
+      dispatch(updateColor(color));
+    } else {
+      dispatch(updateResumeColor(color));
+    }
   };
 
   return (

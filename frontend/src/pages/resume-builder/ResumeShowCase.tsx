@@ -5,165 +5,106 @@ interface ResumeShowCaseProps {
 }
 
 const ResumeShowCase: React.FC<ResumeShowCaseProps> = ({ className }) => {
-
-  const PersonalInfo = useAppSelector((state) => state.Resume.personalInfo);
-
+  const resume = useAppSelector((state) => state.Resume);
+  const colorStyle = useAppSelector((state) => state.Resume.color);
+  const fontStyle = useAppSelector((state) => state.Resume.fontStyle);
+  const fontSize = useAppSelector((state) => state.Resume.fontSize);
 
   return (
-    <div className={`bg-white text-gray-800 ${className} `}>
+    <div
+      className={`bg-white text-gray-800 overflow-hidden ${className} ${
+        fontStyle === "serif"
+          ? "font-serif"
+          : fontStyle === "mono"
+          ? "font-mono"
+          : "font-sans"
+      } text-${
+        fontSize === "Large" ? "lg" : fontSize === "Small" ? "sm" : ""
+      } `}
+      style={{ color: colorStyle || "" }}
+    >
       {/* Header */}
       <div className=" mb-8">
-        <h1 className="text-3xl font-bold">{PersonalInfo.firstname}</h1>
-        <p className="text-lg text-gray-600"></p>
+        <h1 className={`text-3xl font-bold capitalize ${colorStyle}`}>
+          {resume.personalInfo.firstname} {resume.personalInfo.surname}
+        </h1>
+        <p className="text-lg text-gray-600">
+          {resume.personalInfo.contactJobRole}
+        </p>
         <p className="text-gray-500">
-          alexander.smith@example.com | (415) 555-0123 | San Francisco, CA
+          {resume.personalInfo.email} | {resume.personalInfo.phone} |&nbsp;
+          {resume.personalInfo.address}
         </p>
       </div>
       {/* Summary */}
-      <div className="mb-6">
+      <div className="mb-6 ">
         <h2 className="text-2xl font-semibold border-b-2 border-gray-200 pb-1 mb-2">
           Summary
         </h2>
-        <p className="text-gray-700">
-          Experienced and detail-oriented frontend developer with 5+ years of
-          experience building visually appealing, responsive web applications.
-          Proficient in React, TypeScript, and Tailwind CSS, with a passion for
-          creating user-friendly and efficient interfaces that enhance the
-          overall user experience.
-        </p>
+        <p className="text-gray-700 break-words">{resume.summary}</p>
       </div>
 
       {/* Skills */}
-      <div className="mb-6">
+      <div className="mb-4">
         <h2 className="text-2xl font-semibold border-b-2 border-gray-200 pb-1 mb-2">
           Skills
         </h2>
         <div className="flex flex-wrap gap-2">
-          {[
-            "HTML",
-            "CSS",
-            "JavaScript",
-            "TypeScript",
-            "React",
-            "Redux",
-            "Tailwind CSS",
-            "Git",
-            "Responsive Design",
-
-            "Jest",
-            "Framer Motion",
-            "Vite",
-          ].map((skill) => (
+          {resume.skills.map((skill) => (
             <span
-              key={skill}
+              key={skill.id}
               className="px-3 py-1 bg-gray-200 rounded text-sm text-gray-800"
             >
-              {skill}
+              {skill.skill}
             </span>
           ))}
         </div>
       </div>
-
       {/* Experience */}
-      <div className="mb-6">
+      <div className=" mb-6">
         <h2 className="text-2xl font-semibold border-b-2 border-gray-200 pb-1 mb-2">
           Experience
         </h2>
-        <div className="mb-4">
-          <h3 className="text-lg font-semibold">Senior Frontend Developer</h3>
-          <p className="text-gray-600">Tech Innovators Inc. | 2019 - Present</p>
-          <ul className="list-disc ml-5 mt-2 text-gray-700">
-            <li>
-              Led the frontend development team in building scalable and
-              performant web applications using React and TypeScript.
-            </li>
-            <li>
-              Collaborated closely with UX/UI designers to ensure a cohesive and
-              responsive user experience.
-            </li>
-            <li>
-              Improved website load times by 30% through optimization techniques
-              and efficient code practices.
-            </li>
-          </ul>
-        </div>
-        <div className="mb-4">
-          <h3 className="text-lg font-semibold">Frontend Developer</h3>
-          <p className="text-gray-600">Digital Solutions Co. | 2017 - 2019</p>
-          <ul className="list-disc ml-5 mt-2 text-gray-700">
-            <li>
-              Developed dynamic web applications for clients, delivering
-              high-quality code with modern JavaScript frameworks.
-            </li>
-            <li>
-              Enhanced project efficiency by implementing reusable component
-              libraries in React.
-            </li>
-          </ul>
-        </div>
-      </div>
+        {resume.experiences.map((ex, index) => (
+          <div key={index}>
+            <div className="mb-4">
+              <h3 className="text-lg font-semibold">{ex.jobTitle}</h3>
+              <p className="text-gray-600 flex justify-between items-center">
+                <span>{ex.employer}</span>
+                <span className="text-gray-600 text-sm">
+                  {ex.startDate} • {ex.endDate}
+                </span>
+              </p>
 
-      {/* Projects */}
-      <div className="mb-6">
-        <h2 className="text-2xl font-semibold border-b-2 border-gray-200 pb-1 mb-2">
-          Projects
-        </h2>
-        <div className="mb-4">
-          <h3 className="text-lg font-semibold">Personal Portfolio</h3>
-          <p className="text-gray-700">
-            A responsive portfolio showcasing my skills and projects. Built with
-            React, TypeScript, and Tailwind CSS.
-          </p>
-        </div>
-        <div className="mb-4">
-          <h3 className="text-lg font-semibold">E-commerce Website</h3>
-          <p className="text-gray-700">
-            Developed a feature-rich e-commerce platform focusing on responsive
-            design and accessibility.
-          </p>
-        </div>
+              <div className="mt-2 text-gray-600">{ex.jobResponsibilities}</div>
+            </div>
+          </div>
+        ))}
       </div>
-
       {/* Education */}
       <div className="mb-6">
         <h2 className="text-2xl font-semibold border-b-2 border-gray-200 pb-1 mb-2">
           Education
         </h2>
-        <p className="text-gray-700">
-          Bachelor's in Computer Science - University of California, Berkeley,
-          2016
-        </p>
+        {resume.educations.map((degree, index) => (
+          <p className="text-gray-700 my-4" key={index}>
+            {degree.degree}'s in {degree.fieldOfStudy} - {degree.university},{" "}
+            {degree.startDate} -{degree.endDate ? degree.endDate : "Present"}
+          </p>
+        ))}
       </div>
 
-      {/* Footer */}
-      <div className="mt-8 text-center text-sm text-gray-500 flex justify-between">
-        <p>
-          Portfolio:{" "}
-          <a
-            href="https://alexsmithportfolio.com"
-            className="text-blue-500 hover:underline"
-          >
-            alexsmithportfolio.com
-          </a>
-        </p>
-        <p>
-          GitHub:
-          <a
-            href="https://github.com/alexsmith"
-            className="text-blue-500 hover:underline"
-          >
-            github.com/alexsmith
-          </a>
-        </p>
-        <p>
-          LinkedIn:{" "}
-          <a
-            href="https://linkedin.com/in/alexsmith"
-            className="text-blue-500 hover:underline"
-          >
-            linkedin.com/in/alexsmith
-          </a>
-        </p>
+      {/* Certificates */}
+      <div className="mb-6">
+        <h2 className="text-2xl font-semibold border-b-2 border-gray-200 pb-1 mb-2">
+          Certificates
+        </h2>
+        {resume.certifications.map((cert, index) => (
+          <p className="text-gray-700 my-4 flex justify-between" key={index}>
+            <span>{cert.title}</span>
+            <span> {cert.issuer}</span>
+          </p>
+        ))}
       </div>
     </div>
   );

@@ -18,7 +18,7 @@ const ShowResume: React.FC<DownloadModalProps> = ({ onClose }) => {
         className=" absolute top-4 right-4 font-semibold w-6 h-6 cursor-pointer"
         onClick={onClose}
       />
-      <ResumeShowCase className="max-w-4xl mx-auto px-8 py-4 shadow-lg rounded-lg" />
+      <ResumeShowCase className=" max-w-4xl min-w-[800px] px-8 py-4 shadow-lg rounded-lg" />
     </motion.div>
   );
 };
