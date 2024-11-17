@@ -4,6 +4,9 @@ import { IoReturnDownBackOutline } from "react-icons/io5";
 import { useNavigate } from "react-router-dom";
 import { SubmitHandler, useForm } from "react-hook-form";
 import SubmitButton from "../../components/UI/SubmitButton";
+import { GoogleGenerativeAI } from "@google/generative-ai";
+import { useAppDispatch } from "@/hooks/reduxHooks";
+import { updateContent } from "@/redux/coverLetterSlice";
 
 interface FormFields {
   careerField: string;
@@ -20,16 +23,27 @@ const SelectCareer: React.FC = () => {
   } = useForm<FormFields>();
 
   const navigate = useNavigate();
+  const genAI = new GoogleGenerativeAI(import.meta.env.VITE_GOOOGLE_AI_API_KEY);
+  const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+  const dispatch = useAppDispatch();
 
-  const onSubmit: SubmitHandler<FormFields> = async (_, event) => {
+  const fetchAISummary = async (formData: FormFields): Promise<string> => {
+    const { careerField, subCareerField, WorkAuthorizationStatus } = formData;
+    const prompt = `career: ${careerField}, sub-career: ${subCareerField}, work authorization: ${WorkAuthorizationStatus}. Based on those, give me a CoverLetter without header or finalize just content straight within 7-9 lines.`;
+    const result = await model.generateContent(prompt);
+    return result.response.text();
+  };
+
+  const onSubmit: SubmitHandler<FormFields> = async (data, event) => {
     event?.preventDefault();
     try {
-      await new Promise((resolve) => setTimeout(resolve, 2000));
+      const aiSummary = await fetchAISummary(data);
+      if (aiSummary) {
+        dispatch(updateContent(aiSummary));
+      }
       navigate("/finalize-cover");
     } catch (error) {
-      setError("root", {
-        message: "Something went wrong. Please try again.",
-      });
+      setError("root", { message: "Something went wrong. Please try again." });
       console.error("Error:", error);
     }
   };

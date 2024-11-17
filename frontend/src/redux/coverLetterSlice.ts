@@ -16,15 +16,15 @@ interface CoverLetterState {
 }
 
 const initialState: CoverLetterState = {
-  name: "Abdelrahman Mohamed",
+  name: "[Your Name]",
   date: "10/30/2024",
-  phone: "+20 1069175527",
-  adress: "Cairo, Egypt",
-  gmail: "abdelrahman@example.com",
+  phone: "[Your Phone]",
+  adress: "[Your Adress]",
+  gmail: "[Your Email]",
   hr: "[Hiring Manager's Name]",
   content:
     "I am writing to express my interest in the Frontend Engineer position at [Company Name]. My skills in React, JavaScript, and modern web development frameworks make me a strong candidate for this role, I have a proven track record of building dynamic, user-friendly applications that enhance user experience. My experience in collaborating with cross-functional teams ensures that I can effectively contribute to your projects.",
-  lastName: "USerName",
+  lastName: "[Your Name]",
   color: "",
   fontStyle: "sans",
   fontSize: "Medium",

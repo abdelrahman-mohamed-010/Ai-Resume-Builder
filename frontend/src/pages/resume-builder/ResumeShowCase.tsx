@@ -1,16 +1,20 @@
+import { useAppSelector } from "@/hooks/reduxHooks";
+
 interface ResumeShowCaseProps {
   className?: string;
 }
 
 const ResumeShowCase: React.FC<ResumeShowCaseProps> = ({ className }) => {
+
+  const PersonalInfo = useAppSelector((state) => state.Resume.personalInfo);
+
+
   return (
-    <div
-      className={`bg-white text-gray-800 ${className} `}
-    >
+    <div className={`bg-white text-gray-800 ${className} `}>
       {/* Header */}
       <div className=" mb-8">
-        <h1 className="text-3xl font-bold">Alexander James Smith</h1>
-        <p className="text-lg text-gray-600">Senior Frontend Developer</p>
+        <h1 className="text-3xl font-bold">{PersonalInfo.firstname}</h1>
+        <p className="text-lg text-gray-600"></p>
         <p className="text-gray-500">
           alexander.smith@example.com | (415) 555-0123 | San Francisco, CA
         </p>
