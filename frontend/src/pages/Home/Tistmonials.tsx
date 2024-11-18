@@ -51,22 +51,22 @@ const Tistmonials = () => {
           className="max-w-md mx-auto p-4 border rounded-lg shadow-lg bg-white dark:bg-gray-800"
         >
           <motion.p
-            key={currentTestimonialIndex} // Key to trigger re-mount for text
+            key={currentTestimonialIndex}
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -10 }} // Exit animation
+            exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.5 }}
-            className="italic text-secondary-text dark:text-light-background "
+            className="italic text-secondary-text max-sm:text-sm max-sm:mb-2 dark:text-light-background "
           >
             {testimonials[currentTestimonialIndex].text}
           </motion.p>
           <motion.p
-            key={`author-${currentTestimonialIndex}`} // Unique key for author
+            key={`author-${currentTestimonialIndex}`}
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -10 }} // Exit animation
+            exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.5 }}
-            className="font-semibold text-right"
+            className="font-semibold text-right max-sm:text-sm"
           >
             {testimonials[currentTestimonialIndex].author}
           </motion.p>

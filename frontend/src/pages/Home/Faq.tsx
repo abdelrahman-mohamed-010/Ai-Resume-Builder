@@ -33,7 +33,7 @@ const Faq: React.FC = () => {
 
   return (
     <section className="py-8">
-      <h2 className="text-3xl font-semibold mb-4 text-primary dark:text-accent">
+      <h2 className="text-3xl max-sm:text-lg font-semibold mb-4 text-primary dark:text-accent">
         Frequently Asked Questions
       </h2>
       <div className="space-y-4">
@@ -46,13 +46,13 @@ const Faq: React.FC = () => {
           >
             <div>
               <motion.h3
-                className="font-medium w-fit text-primary-text dark:text-secondary-text"
+                className="font-medium w-fit max-sm:text-sm text-primary-text dark:text-secondary-text"
                 layout
               >
                 {faq.question}
               </motion.h3>
               {expandedFAQ === index && (
-                <p className="mt-4 text-secondary-text dark:text-gray-400">
+                <p className="mt-4  max-sm:text-sm text-secondary-text dark:text-gray-400">
                   {faq.answer}
                 </p>
               )}
@@ -63,7 +63,7 @@ const Faq: React.FC = () => {
               layout
               animate={{ rotate: expandedFAQ === index ? 180 : 0 }}
             >
-              <IoIosArrowDown />
+              <IoIosArrowDown className=" max-sm:mt-1" />
             </motion.div>
           </motion.div>
         ))}
