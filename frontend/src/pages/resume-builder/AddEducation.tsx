@@ -89,7 +89,7 @@ const AddEducation = () => {
   };
 
   return (
-    <div className="p-6 mt-6 dark:bg-inherit w-full">
+    <div className="p-6 max-sm:px-0 mt-6 dark:bg-inherit w-full">
       <div className="flex mb-6">
         <button
           onClick={() => handleFormTypeChange("education")}
@@ -118,7 +118,7 @@ const AddEducation = () => {
         {formData.formType === "education" && (
           <div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="mb-4">
+              <div className="mb-4 max-sm:mb-0">
                 <InputField
                   label="University/Institute"
                   id="university"
@@ -161,7 +161,7 @@ const AddEducation = () => {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="mb-4">
+              <div className="mb-4 max-sm:mb-0">
                 <InputField
                   label="Field of Study"
                   id="fieldOfStudy"

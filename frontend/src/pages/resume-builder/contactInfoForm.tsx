@@ -95,7 +95,7 @@ const ContactInfoForm: React.FC = () => {
               value={formData.address}
               onChange={handleChange}
             />
-            <div className="flex gap-4">
+            {/* <div className="flex gap-4"> */}
               <InputField
                 label="Postal Code"
                 id="postalCode"
@@ -118,7 +118,7 @@ const ContactInfoForm: React.FC = () => {
                 value={formData.phone}
                 onChange={handleChange}
               />
-            </div>
+            {/* </div> */}
             <InputField
               label="Email"
               id="email"

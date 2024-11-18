@@ -12,7 +12,7 @@ const steps = [
         viewBox="0 0 24 24"
         strokeWidth="1.5"
         stroke="currentColor"
-        className="w-8 h-8 text-yellow-500 dark:text-yellow-300"
+        className="w-8 h-8 max-sm:w-6 max-sm:h-6 text-yellow-500 dark:text-yellow-300"
       >
         <path
           strokeLinecap="round"
@@ -33,7 +33,7 @@ const steps = [
         viewBox="0 0 24 24"
         strokeWidth="1.5"
         stroke="currentColor"
-        className="w-8 h-8 text-indigo-400 dark:text-indigo-300"
+        className="w-8 h-8 max-sm:w-6 max-sm:h-6 text-indigo-400 dark:text-indigo-300"
       >
         <path
           strokeLinecap="round"
@@ -54,7 +54,7 @@ const steps = [
         viewBox="0 0 24 24"
         strokeWidth="1.5"
         stroke="currentColor"
-        className="w-8 h-8 text-green-500 dark:text-green-300"
+        className="w-8 h-8 max-sm:w-6 max-sm:h-6 text-green-500 dark:text-green-300"
       >
         <path
           strokeLinecap="round"
@@ -71,14 +71,13 @@ const HowItWorks = () => {
   return (
     <section className="mt-28 max-w-md mx-auto">
       <div className="mx-auto text-center ">
-        <div className="text-2xl font-extrabold mb-1 text-primary dark:text-white">
+        <div className="text-2xl max-sm:text-xl font-extrabold mb-1 text-primary dark:text-white">
           3 Simple Steps
         </div>
-        <h1 className="text-[50px] font-bold text-gray-800 dark:text-white">
+        <h1 className="text-[50px] max-sm:text-3xl font-bold text-gray-800 dark:text-white">
           Getting Started
         </h1>
       </div>
-
       <div className="bg-white text-gray-800 dark:bg-gray-900 dark:text-gray-200 flex flex-col gap-8 justify-center p-8">
         {steps.map((step, index) => (
           <motion.div
@@ -88,15 +87,17 @@ const HowItWorks = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: index * 0.3 }}
           >
-            <div className={`${step.bgColor} p-2 rounded-lg`}>{step.icon}</div>
-            <p className="text-lg text-indigo-800 dark:text-indigo-300">
+            <div className={`${step.bgColor} p-2 rounded-lg max-sm:p-2`}>
+              {step.icon}
+            </div>
+            <p className="text-lg max-sm:text-base text-indigo-800 dark:text-indigo-300">
               {step.description}
             </p>
           </motion.div>
         ))}
         <Link
           to={"/builder/contact-info"}
-          className="bg-gradient-to-r text-center from-indigo-400 to-indigo-600 text-white py-4 px-6 rounded-full font-semibold shadow-md dark:from-indigo-700 dark:to-indigo-800"
+          className="bg-gradient-to-r text-center from-indigo-400 to-indigo-600 text-white py-4 px-6 max-sm:py-3 max-sm:px-4 rounded-full font-semibold shadow-md dark:from-indigo-700 dark:to-indigo-800"
         >
           Let’s Get Started
         </Link>

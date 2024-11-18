@@ -37,14 +37,14 @@ const ResumeArchive = () => {
   return (
     <div className=" relative min-h-screen bg-light-background dark:bg-dark-background px-8 py-3">
       <header className="flex justify-between items-center mb-6">
-        <h1 className="text-3xl font-bold text-primary-text dark:text-light-background">
+        <h1 className="text-3xl max-sm:text-2xl font-bold text-primary-text dark:text-light-background">
           Resume Archive
         </h1>
         <motion.button
           className="px-4 py-2 dark:text-white"
           whileHover={{ scale: 1.1, rotate: 90 }}
         >
-          <IoMdAdd className=" font-extrabold text-4xl" />
+          <IoMdAdd className=" font-extrabold text-4xl max-sm:text-3xl" />
         </motion.button>
       </header>
       <motion.div

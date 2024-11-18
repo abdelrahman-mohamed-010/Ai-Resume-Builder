@@ -17,10 +17,10 @@ const PageHeader: React.FC<PageHeaderProps> = ({ header, paragraph }) => {
       >
         <FaArrowLeft /> Go Back
       </button>
-      <h1 className="font-bold text-3xl dark:text-white mb-2">
+      <h1 className="font-bold text-3xl dark:text-white mb-2 max-sm:text-2xl">
         {header}
       </h1>
-      <p className="text-lg text-neutral-600 dark:text-neutral-300  max-md:text-base">
+      <p className="text-lg text-neutral-600 dark:text-neutral-300  max-md:text-base max-sm:text-sm">
         {paragraph}
       </p>
     </>

@@ -7,13 +7,13 @@ import NextBtn from "./NextBtn";
 const ContactInfo = () => {
   return (
     <motion.div
-      className="p-8 h-screen"
+      className="p-8 min-h-screen"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.5 }}
     >
-      <div className=" flex gap-4 h-fit ">
+      <div className=" flex gap-4 h-fit max-sm:flex-col max-sm:items-end ">
         <div className=" w-full">
           <PageHeader
             header="Tell us about your work experience"

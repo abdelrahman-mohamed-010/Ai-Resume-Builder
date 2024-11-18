@@ -22,7 +22,7 @@ const ContactInfo = () => {
           />
           <ContactInfoForm />
         </div>
-        <div className=" mb-4">
+        <div className=" mb-4 max-sm:hidden">
           <ResumeOverview />
         </div>
       </div>

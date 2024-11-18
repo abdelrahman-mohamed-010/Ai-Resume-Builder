@@ -3,14 +3,24 @@ import { motion } from "framer-motion";
 import { FaCheckCircle } from "react-icons/fa";
 import { AiOutlineCloseCircle } from "react-icons/ai";
 
+// const checklistItems = [
+//   "Tailor your resume for each application.",
+//   "Use a clear and professional format.",
+//   "Highlight relevant skills and achievements.",
+//   "Keep your resume to one page if possible.",
+//   "Proofread for spelling and grammatical errors.",
+//   "Include quantifiable results in your experience.",
+// ];
+
 const checklistItems = [
-  "Tailor your resume for each application.",
-  "Use a clear and professional format.",
-  "Highlight relevant skills and achievements.",
-  "Keep your resume to one page if possible.",
-  "Proofread for spelling and grammatical errors.",
-  "Include quantifiable results in your experience.",
+  "Tailor your resume.",
+  "Use a clear format.",
+  "Highlight key skills.",
+  "Keep it to one page.",
+  "Proofread carefully.",
+  "Include measurable results.",
 ];
+
 
 const ChecklistItems = () => {
   const [checkedItems, setCheckedItems] = useState<boolean[]>(
@@ -25,7 +35,7 @@ const ChecklistItems = () => {
 
   return (
     <section className="w-full  mx-auto p-6 bg-light-background dark:bg-dark-background rounded-lg shadow border border-gray-200 dark:border-gray-700">
-      <h2 className="text-2xl font-bold text-primary-text dark:text-light-background mb-6 text-center">
+      <h2 className="text-2xl max-sm:text-xl font-bold max-sm:font-semibold text-primary-text dark:text-light-background mb-6 text-center">
         Resume Preparation Checklist
       </h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -44,7 +54,7 @@ const ChecklistItems = () => {
           >
             <div className="flex items-center justify-between">
               <span
-                className={`text-base font-medium ${
+                className={`text-base font-medium tracking-wide max-sm:text-sm max-sm:font-semibold ${
                   checkedItems[index]
                     ? "text-light-background"
                     : "text-primary-text dark:text-light-background"
@@ -53,7 +63,7 @@ const ChecklistItems = () => {
                 {item}
               </span>
               {checkedItems[index] ? (
-                <FaCheckCircle className="text-light-background" />
+                <FaCheckCircle className="text-light-background max-sm:text-sm" />
               ) : (
                 <AiOutlineCloseCircle className="text-secondary-text" />
               )}
@@ -66,4 +76,3 @@ const ChecklistItems = () => {
 };
 
 export default ChecklistItems;
-

@@ -38,7 +38,7 @@ const newResources = [
 const Resources: React.FC = () => {
   return (
     <section className="mb-12 w-full dark:bg-dark-background  rounded-lg mt-4">
-      <h2 className="text-2xl font-semibold text-primary-text dark:text-light-background mb-6">
+      <h2 className="text-2xl max-sm:text-xl font-semibold text-primary-text dark:text-light-background mb-6">
         Recommended Resources
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">

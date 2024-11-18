@@ -56,10 +56,10 @@ const SelectCareer: React.FC = () => {
     "w-full p-3 md:p-4 border border-gray-300 dark:border-gray-600 rounded appearance-none pr-10 focus:outline-none focus:ring-2 focus:ring-primary dark:bg-dark-background dark:text-white";
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-light-background dark:bg-dark-background px-4">
+    <div className="h-screen flex flex-col  items-center max-sm:justify-start justify-center bg-light-background dark:bg-dark-background px-4">
       <motion.form
         onSubmit={handleSubmit(onSubmit)}
-        className="bg-white dark:bg-dark-background dark:text-white p-6 md:p-10 rounded-lg border border-gray-300 dark:border-gray-600 w-full max-w-sm md:max-w-md lg:max-w-xl"
+        className="bg-white  dark:bg-dark-background max-sm:mt-20 dark:text-white p-6 md:p-10 rounded-lg border border-gray-300 dark:border-gray-600 w-full max-w-sm md:max-w-md lg:max-w-xl"
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.4 }}
@@ -190,9 +190,9 @@ const SelectCareer: React.FC = () => {
         </AnimatePresence>
 
         {/* Buttons */}
-        <div className="flex justify-between ">
+        <div className="flex justify-between max-sm:flex-col gap-4 ">
           <motion.button
-            className="w-[48%] px-4 py-3 bg-gray-300 dark:bg-gray-700 text-black dark:text-white rounded-lg hover:bg-gray-400 dark:hover:bg-gray-800 text-sm md:text-base flex items-center justify-center border border-gray-300 dark:border-gray-600"
+            className="w-[48%] px-4 py-3 max-sm:py-1 bg-gray-300 dark:bg-gray-700 text-black dark:text-white rounded-lg hover:bg-gray-400 dark:hover:bg-gray-800 text-sm md:text-base flex items-center justify-center border border-gray-300 dark:border-gray-600 max-sm:w-full"
             whileHover={{ scale: 1.05 }}
             onClick={handleBack}
           >

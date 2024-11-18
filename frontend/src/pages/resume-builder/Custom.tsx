@@ -15,7 +15,7 @@ const Custom = () => {
       transition={{ duration: 0.5 }}
     >
       <div className="flex w-full flex-col lg:flex-row gap-4 lg:gap-8 h-fit items-end">
-        <div className=" flex w-full gap-4 items-start">
+        <div className=" flex w-full gap-4 items-start max-sm:flex-col max-sm:items-end">
           <div className=" relative w-full">
             <PageHeader
               header="Your Custom Section"

@@ -93,9 +93,9 @@ const WorkExperienceForm = () => {
         <div className="text-sm mt-6 font-semibold text-neutral-600 dark:text-neutral-300">
           * indicates a required field
         </div>
-        <div className="flex gap-4 mt-4">
+        <div className="flex gap-4 mt-4 max-sm:flex-col">
           {/* Left Column */}
-          <div className="flex w-1/2 flex-col gap-4">
+          <div className="flex w-1/2 flex-col gap-4 max-sm:w-full">
             <InputField
               label="Job Title"
               type="text"
@@ -156,7 +156,7 @@ const WorkExperienceForm = () => {
           </div>
 
           {/* Right Column */}
-          <div className="flex flex-col gap-4 w-1/2">
+          <div className="flex flex-col gap-4 w-1/2 max-sm:w-full">
             <InputField
               label="Country"
               type="text"
@@ -167,7 +167,7 @@ const WorkExperienceForm = () => {
               value={formData.country}
               onChange={handleChange}
             />
-            <div className="flex gap-4 w-full">
+            <div className="flex gap-4 w-full max-sm:flex-col">
               <InputField
                 label="Start Date"
                 id="startDate"
@@ -191,7 +191,7 @@ const WorkExperienceForm = () => {
                 />
               )}
             </div>
-            <div className="w-full flex justify-end">
+            <div className="w-full flex justify-end max-sm:justify-start">
               <div className="flex items-center gap-2">
                 <input
                   type="checkbox"

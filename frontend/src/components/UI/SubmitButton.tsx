@@ -12,7 +12,7 @@ const SubmitButton: React.FC<SubmitButtonProps> = ({
 }) => {
   return (
     <motion.button
-      className={`font-semibold w-[48%] px-4 py-3 bg-primary dark:bg-accent text-white rounded-lg hover:bg-primary-dark dark:hover:bg-accent-dark text-sm md:text-base flex items-center justify-center border-white ${
+      className={`font-semibold w-[48%] max-sm:w-full px-4 py-3 bg-primary dark:bg-accent text-white rounded-lg hover:bg-primary-dark dark:hover:bg-accent-dark text-sm md:text-base flex items-center justify-center border-white ${
         isSubmitting ? " cursor-not-allowed" : ""
       }`}
       whileHover={{ scale: 1.05 }}
