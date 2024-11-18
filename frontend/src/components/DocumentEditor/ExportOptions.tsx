@@ -30,6 +30,11 @@ const ExportOptions: React.FC<{ type: string }> = ({ type }) => {
           Email
         </button>
       )}
+      {type === "Resume" && (
+        <button className="block w-full rounded-3xl border-2 text-primary font-bold border-primary p-3 transition-all hover:border-indigo-800 hover:text-indigo-800 3xl:p-4">
+          Save
+        </button>
+      )}
     </>
   );
 };

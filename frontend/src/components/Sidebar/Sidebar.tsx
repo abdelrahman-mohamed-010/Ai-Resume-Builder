@@ -14,20 +14,23 @@ const Sidebar = () => {
   return (
     <motion.nav
       layout
-      className={`sticky top-0 h-screen shrink-0 border-r border-slate-300 z-30 p-2 
+      className={`sticky top-0 h-screen shrink-0 border-r border-slate-300 z-30 p-2
         bg-light-background dark:bg-dark-background max-sm:hidden`}
-      style={{
-        width: open ? "225px" : "fit-content",
+      animate={{
+        width: open ? 225 : 60,
+      }}
+      transition={{
+        duration: 0.3,
+        ease: "easeInOut",
       }}
     >
       <TitleSection open={open} />
-
       <div className="space-y-1">
         <Option Icon={FiHome} title="Home" open={open} path="/" />
         <Option
           Icon={IoMdAdd}
           title="Build New Resume"
-          path="build-new-resume"
+          path="builder/start"
           open={open}
         />
         <Option

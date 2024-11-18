@@ -26,7 +26,12 @@ const Option: React.FC<OptionProps> = ({ Icon, title, path, open, notifs }) => {
           layout
           className="grid h-full w-10 place-content-center text-lg relative group"
         >
-          <Icon />
+          <Icon
+            style={{
+              minWidth: "40px",
+              maxWidth: "40px",
+            }}
+          />
           {!open && (
             <span className="absolute font-semibold bg-neutral-200  bg-opacity-100 rounded py-1 px-2 text-sm left-11 top-6 hidden group-hover:block text-nowrap font-sans text-gray-600 -z-50">
               {title}
