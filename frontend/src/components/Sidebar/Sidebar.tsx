@@ -48,12 +48,19 @@ const Sidebar = () => {
         <TitleSection open={open} />
 
         <div className={`space-y-1 ${!open ? " max-sm:hidden" : ""}`}>
-          <Option Icon={FiHome} title="Home" open={open} path="/" />
+          <Option
+            Icon={FiHome}
+            title="Home"
+            open={open}
+            path="/"
+            setOpen={setOpen}
+          />
           <Option
             Icon={IoMdAdd}
             title="Build New Resume"
             path="builder/start"
             open={open}
+            setOpen={setOpen}
           />
           <Option
             Icon={MdOutlineArchive}
@@ -61,18 +68,21 @@ const Sidebar = () => {
             path="resume-archive"
             open={open}
             notifs={3}
+            setOpen={setOpen}
           />
           <Option
             Icon={IoMdPaper}
             title="Build Cover Letter"
             path="select-career"
             open={open}
+            setOpen={setOpen}
           />
           <Option
             Icon={MdOutlineTipsAndUpdates}
             title="Tips and Resources"
             path="tips-and-resources"
             open={open}
+            setOpen={setOpen}
           />
         </div>
 

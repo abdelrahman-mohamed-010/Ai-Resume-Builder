@@ -7,11 +7,27 @@ interface OptionProps {
   open: boolean;
   notifs?: number;
   path: string;
+  setOpen: (open: boolean) => void;
 }
 
-const Option: React.FC<OptionProps> = ({ Icon, title, path, open, notifs }) => {
+const Option: React.FC<OptionProps> = ({
+  Icon,
+  title,
+  path,
+  open,
+  notifs,
+  setOpen,
+}) => {
+  const isSmallScreen = window.innerWidth < 768;
+  const handleNavLinkClick = () => {
+    if (isSmallScreen) {
+      setOpen(false);
+    }
+    console.log("hi")
+  };
+
   return (
-    <motion.div layout>
+    <motion.div layout onClick={handleNavLinkClick}>
       <NavLink
         to={path}
         className={({ isActive }) =>

@@ -38,9 +38,14 @@ const TipsPage: React.FC = () => {
           Essential Tips for Your Resume
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
-          {tips.map((tip) => (
-            <div className="flex flex-col items-center bg-white dark:bg-dark-background  rounded-lg p-6 transition-transform hover:scale-105">
-              <span className="text-6xl max-sm:text-5xl mb-4 ">{tip.emoji}</span>
+          {tips.map((tip, index) => (
+            <div
+              key={index}
+              className="flex flex-col items-center bg-white dark:bg-dark-background  rounded-lg p-6 transition-transform hover:scale-105"
+            >
+              <span className="text-6xl max-sm:text-5xl mb-4 ">
+                {tip.emoji}
+              </span>
               <h3 className="text-xl font-semibold text-primary-text dark:text-light-background mb-2 ">
                 {tip.title}
               </h3>
