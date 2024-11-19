@@ -26,7 +26,7 @@ const Features = () => {
             <div className="lg:text-4xl md:text-2xl text-primary mr-4">
               {feature.icon}
             </div>
-            <h3 className="text-lg font-semibold max-sm:text-sm text-primary-text dark:text-secondary-text ">
+            <h3 className="text-lg font-semibold max-sm:text-sm text-primary-text dark:text-secondary-text dark:max-sm:text-slate-300 ">
               {feature.title}
             </h3>
           </div>
@@ -34,6 +34,6 @@ const Features = () => {
       </div>
     </motion.section>
   );
-}
+};
 
-export default Features
+export default Features;

@@ -1,9 +1,9 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  darkMode: "class", // Enable dark mode
+  darkMode: "class",
   content: [
-    "./index.html", // Include the index.html file
-    "./src/**/*.{js,ts,jsx,tsx}", // Scan all files in the src folder
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
     extend: {
@@ -19,8 +19,8 @@ export default {
         error: "#B91C1C", // Red (for error messages)
       },
       screens: {
-        "3xl": "1920px", // example for extra large screens
-        "4xl": "2560px", // example for even larger screens if needed
+        "3xl": "1920px",
+        "4xl": "2560px",
       },
     },
   },

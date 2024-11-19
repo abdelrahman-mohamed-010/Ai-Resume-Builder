@@ -46,7 +46,7 @@ const Faq: React.FC = () => {
           >
             <div>
               <motion.h3
-                className="font-medium w-fit max-sm:text-sm text-primary-text dark:text-secondary-text"
+                className="font-medium w-fit max-sm:text-sm dark:max-sm:text-slate-300 text-primary-text dark:text-secondary-text"
                 layout
               >
                 {faq.question}

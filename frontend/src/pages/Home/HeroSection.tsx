@@ -4,6 +4,7 @@ import { Typewriter } from "react-simple-typewriter";
 import Testmonials from "./Tistmonials";
 
 const HeroSection = () => {
+  const isSmallScreen = window.innerWidth < 768;
   return (
     <main className="relative flex flex-col items-center max-sm:justify-start max-sm:mt-16 justify-center text-center gap-8 max-sm:gap-5 min-h-screen max-sm:min-h-fit max-sm:mb-12 bg-light-background text-primary-text dark:bg-dark-background dark:text-light-background">
       <motion.h1
@@ -12,26 +13,30 @@ const HeroSection = () => {
         transition={{ duration: 0.8 }}
         className="mb-4 text-5xl max-sm:text-2xl max-sm:mb-2 font-extrabold tracking-wide"
       >
-        <Typewriter
-          words={[
-            "Transform Your Resume with AI",
-            "Create Professional Resumes in Minutes",
-            "Start Building Your Career Today",
-          ]}
-          loop={Infinity}
-          cursor
-          cursorStyle="|"
-          typeSpeed={70}
-          deleteSpeed={50}
-          delaySpeed={1000}
-        />
+        {!isSmallScreen ? (
+          <Typewriter
+            words={[
+              "Transform Your Resume with AI",
+              "Create Professional Resumes in Minutes",
+              "Start Building Your Career Today",
+            ]}
+            loop={Infinity}
+            cursor
+            cursorStyle="|"
+            typeSpeed={70}
+            deleteSpeed={50}
+            delaySpeed={1000}
+          />
+        ) : (
+          <p className=" w-full">Start Building Your Career Today</p>
+        )}
       </motion.h1>
 
       <motion.h2
         initial={{ opacity: 0, y: -40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.2 }}
-        className="mb-2 text-xl max-sm:text-sm max-sm:mb-0 font-semibold text-secondary-text dark:text-light-background"
+        className="mb-2 text-xl max-sm:text-sm dark:max-sm:text-slate-300 max-sm:mb-0 font-semibold text-secondary-text dark:text-light-background"
       >
         Elevate your job application with our easy-to-use tools.
       </motion.h2>
@@ -40,7 +45,7 @@ const HeroSection = () => {
         initial={{ opacity: 0, y: -40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.4 }}
-        className="mb-6 text-lg max-w-2xl max-sm:text-xs text-secondary-text dark:text-light-background z-10"
+        className="mb-6 text-lg max-w-2xl max-sm:text-xs dark:max-sm:text-slate-300 text-secondary-text dark:text-light-background z-10"
       >
         Our AI tools help you create a professional, visually appealing resume
         in minutes. Start building your career today.
