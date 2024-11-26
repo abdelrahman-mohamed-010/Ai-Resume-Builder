@@ -35,7 +35,6 @@ export interface PersonalInfo {
   firstname?: string;
   surname?: string;
   address?: string;
-  postalcode?: string;
   phone?: string;
   contactJobRole?: string;
   email?: string;

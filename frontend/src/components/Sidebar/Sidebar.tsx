@@ -9,7 +9,7 @@ import Option from "./Option";
 import ToggleClose from "./ToggleClose";
 
 const Sidebar = () => {
-  const isSmallScreen = window.innerWidth < 768;
+  const isSmallScreen = window.innerWidth < 640;
   const [open, setOpen] = useState(!isSmallScreen);
 
   useEffect(() => {

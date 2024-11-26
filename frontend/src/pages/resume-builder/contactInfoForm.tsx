@@ -11,7 +11,6 @@ const ContactInfoForm: React.FC = () => {
     surname: "",
     jobRole: "",
     address: "",
-    postalCode: "",
     phone: "",
     email: "",
   });
@@ -35,7 +34,6 @@ const ContactInfoForm: React.FC = () => {
         firstname: formData.firstName,
         surname: formData.surname,
         address: formData.address,
-        postalcode: formData.postalCode,
         phone: formData.phone,
         contactJobRole: formData.jobRole,
         email: formData.email,
@@ -95,18 +93,6 @@ const ContactInfoForm: React.FC = () => {
               value={formData.address}
               onChange={handleChange}
             />
-            {/* <div className="flex gap-4"> */}
-              <InputField
-                label="Postal Code"
-                id="postalCode"
-                name="postalCode"
-                type="text"
-                required
-                placeholder="e.g. 4057"
-                className="flex-1"
-                value={formData.postalCode}
-                onChange={handleChange}
-              />
               <InputField
                 label="Phone"
                 id="phone"
