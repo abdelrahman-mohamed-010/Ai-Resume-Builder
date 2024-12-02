@@ -14,7 +14,7 @@ const ResumeOverview = () => {
         </Modal>
       )}
 
-      <div className=" w-fit h-fit mt-16 p-4 bg-white dark:bg-neutral-200 shadow-md rounded-lg border border-gray-200 text-gray-800 text-[10px] relative overflow-hidden max-sm:hidden">
+      <div className=" w-[270px] h-fit mt-16 p-4 bg-white dark:bg-neutral-200 shadow-md rounded-lg border border-gray-200 text-gray-800 text-[10px] relative overflow-hidden max-sm:hidden">
         <button
           onClick={() => setShowModal(true)}
           className="absolute z-40 bottom-12 left-1/2 transform -translate-x-1/2 rounded-full text-primary border-primary hover:text-black hover:border-black transition-all border-2 flex items-center gap-2 bg-white font-semibold text-lg py-1 px-3 cursor-pointer "
